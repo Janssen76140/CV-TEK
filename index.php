@@ -1,10 +1,16 @@
 <?php
-require('vendor/autoload.php');
+session_start();
+include ('inc/function.php');
+include ('inc/pdo.php');
 
-use Cocur\Slugify\Slugify;
 
-$slugify = new Slugify();
-echo $slugify->slugify('Hello World!');
+
+
+
+include('inc/header.php'); ?>
+
+
+<?php include('inc/footer.php');
 
 
 
