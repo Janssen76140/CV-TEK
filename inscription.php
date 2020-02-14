@@ -1,4 +1,4 @@
-<?php 
+<?php
 spl_autoload_register();
 
 use Inc\Repository\ArticleRepository;
@@ -16,16 +16,15 @@ if (!empty($_POST['submitted'])) {
     $confmdp = trim(strip_tags($_POST['password2']));
 
     // Validation
-    $v = new Validation();    
+    $v = new Validation();
     $v->ValidMail($errors, $mail);
     $v->ValidMdp($errors, $mdp, $confmdp);
 
     if (count($errors) == 0) {
         // INSERT into
-        
 
         $repo = new ArticleRepository;
-        $register = $repo->insert($mail,$mdp);
+        $register = $repo->insert($mail, $mdp);
         $success = true;
         header('Location: connexion.php');
     }
@@ -37,16 +36,16 @@ include('inc/header.php'); ?>
 
 <form action="" method="post">
 
-    <?= $form->label('mail','Email'); ?>
-    <?= $form->input('mail','text'); ?>
+    <?= $form->label('mail', 'Email'); ?>
+    <?= $form->input('mail', 'text'); ?>
     <?= $form->errors('mail'); ?>
 
-    <?= $form->label('password','Mot de passe'); ?>
-    <?= $form->input('password','password'); ?>
+    <?= $form->label('password', 'Mot de passe'); ?>
+    <?= $form->input('password', 'password'); ?>
     <?= $form->errors('password'); ?>
 
-    <?= $form->label('password2','Confirmez votre mot de passe'); ?>
-    <?= $form->input('password2','password'); ?>
+    <?= $form->label('password2', 'Confirmez votre mot de passe'); ?>
+    <?= $form->input('password2', 'password'); ?>
     <?= $form->errors('password2'); ?>
 
     <?= $form->submit(); ?>
