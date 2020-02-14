@@ -3,7 +3,7 @@
 
 
     <h1>Conditions générales d'utilisation
-        du site CV-TEK</h1>
+         dU site CV-TEK</h1>
     <h2>Préambule</h2>
     <p>Les présentes conditions générales d'utilisation sont conclues entre :</p>
     <p>- le gérant du site internet, ci-après désigné « l’Éditeur »,</p>
