@@ -22,7 +22,7 @@ if (!empty($_POST['submitted'])) {
 
     if (count($errors) == 0) {
         // INSERT into
-
+        
         $repo = new ArticleRepository;
         $register = $repo->insert($mail, $mdp);
         $success = true;
