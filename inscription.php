@@ -11,8 +11,8 @@ $success = false;
 
 if (!empty($_POST['submitted'])) {
     // FAILLE XSS
-    $mail   = trim(strip_tags($_POST['mail']));
-    $mdp = trim(strip_tags($_POST['password']));
+    $mail    = trim(strip_tags($_POST['mail']));
+    $mdp     = trim(strip_tags($_POST['password']));
     $confmdp = trim(strip_tags($_POST['password2']));
 
     // Validation
@@ -24,15 +24,17 @@ if (!empty($_POST['submitted'])) {
         // INSERT into
         
         $repo = new ArticleRepository;
-        $register = $repo->insert($mail, $mdp);
+        $register = $repo->insertRechercheur($mail, $mdp);
         $success = true;
-        header('Location: connexion.php');
+        //header('Location: connexion.php');
     }
 }
 
 $form = new Form($errors);
 
 include('inc/header.php'); ?>
+
+<h2>Inscription dépot de CV</h2>
 
 <form action="" method="post">
 
@@ -50,5 +52,6 @@ include('inc/header.php'); ?>
 
     <?= $form->submit(); ?>
 </form>
+<button><a href="inscriptionRecruteur.php">Je suis recruteur</a></button>
 
 <?php include('inc/footer.php');

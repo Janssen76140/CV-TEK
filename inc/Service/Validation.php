@@ -5,7 +5,7 @@ use Inc\Repository\ArticleRepository;
 
 class Validation 
 {
-    public function validChamp($errors, $value, $key, $min, $max, $empty = false)
+    public function validChamp(&$errors, $value, $key, $min, $max, $empty = false)
     {
         if (!empty($value)) {
             if (mb_strlen($value) < $min) {
@@ -40,7 +40,7 @@ class Validation
 
     }
 
-    public function ValidMdp(&$errors, $password1,$password2)
+    public function ValidMdp(&$errors, $password1, $password2)
     {
         if (!empty($password1)) {
             if ($password1 != $password2) {

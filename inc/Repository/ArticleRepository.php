@@ -7,7 +7,7 @@ use Inc\Utils;
 
 class ArticleRepository
 {
-    private $table = 'users';
+    private $table = 'users_recruteur';
 
     public function findByEmail($mail)
     {
@@ -19,17 +19,37 @@ class ArticleRepository
         return $query->fetchObject('\Inc\Model\ArticleModel');
     }
 
-    public function insert($mail, $mdp)
+    public function insertRecruteur($nom, $prenom, $email, $nomEntreprise, $adresse, $telephone, $siret, $mdp)
     {
         $hashPassword = password_hash($mdp, PASSWORD_BCRYPT);
         $token = Utils::generatorToken(120);
 
         $pdo = LocalPdo::getPdo();
-        $sql = "INSERT INTO $this->table VALUES (NULL, :mail, :mdp, :confmdp)";
+        $sql = "INSERT INTO $this->table VALUES (NULL, :nom, :prenom, :mail, :nomEntreprise, :adresse, :telephone, :siret, :mdp, :token, 'recruteur')";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':mail', $mail, \PDO::PARAM_STR);
+        $query->bindValue(':nom', $prenom, \PDO::PARAM_STR);
+        $query->bindValue(':prenom', $prenom, \PDO::PARAM_STR);
+        $query->bindValue(':mail', $email, \PDO::PARAM_STR);
+        $query->bindValue(':nomEntreprise', $nomEntreprise, \PDO::PARAM_STR);
+        $query->bindValue(':adresse', $adresse, \PDO::PARAM_STR);
+        $query->bindValue(':telephone', $telephone, \PDO::PARAM_STR);
+        $query->bindValue(':siret', $siret, \PDO::PARAM_STR);
         $query->bindValue(':mdp', $hashPassword, \PDO::PARAM_STR);
-        $query->bindValue(':confmdp', $token, \PDO::PARAM_STR);
+        $query->bindValue(':token', $token, \PDO::PARAM_STR);
+        $query->execute();
+    }
+
+    public function insertRechercheur($email, $mdp)
+    {
+        $hashPassword = password_hash($mdp, PASSWORD_BCRYPT);
+        $token = Utils::generatorToken(120);
+
+        $pdo = LocalPdo::getPdo();
+        $sql = "INSERT INTO $this->table VALUES (NULL,NULL,NULL,:mail,NULL,NULL,NULL,NULL,:mdp,:token,'utilisateur')";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':mail', $email, \PDO::PARAM_STR);
+        $query->bindValue(':mdp', $hashPassword, \PDO::PARAM_STR);
+        $query->bindValue(':token', $token, \PDO::PARAM_STR);
         $query->execute();
     }
 }

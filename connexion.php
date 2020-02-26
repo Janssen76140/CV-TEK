@@ -13,7 +13,7 @@ $success = false;
 if (!empty($_POST['submitted'])) {
     // FAILLE XSS
     $mail   = trim(strip_tags($_POST['mail']));
-    $mdp = trim(strip_tags($_POST['password']));
+    $mdp    = trim(strip_tags($_POST['password']));
 
     // Validation
     $v = new Validation();
@@ -25,7 +25,7 @@ if (!empty($_POST['submitted'])) {
         $login = $repo->findByEmailAndPassword($mail, $password);
 
         $success = true;
-        header('Location: index.php');
+        //header('Location: index.php');
     }
 }
 
