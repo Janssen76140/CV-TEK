@@ -1,1 +1,220 @@
 @import "reset.css";
+
+.wrap {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1800px;
+    padding-top: 90px;
+    text-align: center;
+}
+
+html {
+    height: 100%;
+}
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+    font-family: 'Candara', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+/* HEADER */
+header nav .logo {
+    height: 50px;
+    float: left;
+    margin: 20px 0 0 20px;
+}
+header nav ul {
+    float: right;
+    margin-top: 40px;
+}
+header nav ul li {
+    float: left;
+    margin-right: 40px;
+}
+header nav ul li a {
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    background-color: #4682B4;
+}
+header nav ul li a:hover {
+    color: #008ebf;
+}
+/* MEMBRES DU PROJET */
+#tronbinoscope {
+    background-color: #ECF0F1;
+    text-align: center;
+}
+.ava {
+    float: left;
+    margin-top: 50px;
+    width: 25%;
+}
+.ava h4 {
+    color: #25313C;
+    font-size: 1.8em;
+    text-align: center;
+}
+.ava img {
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.ava p {
+    color: #25313C;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.avaste p {
+    margin-bottom: 150px;
+}
+/* FOOTER */
+footer {
+    position: absolute;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    bottom: 0px;
+    color: white;
+    text-align: center;
+    background-color: #4682B4;
+}
+footer p {
+    margin-bottom: 10px;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+footer a:hover {
+    color: #008ebf;
+}
+/* PRESENTATION DU SITE */
+#graph-texte {
+    background-color: #ECF0F1;
+}
+.graph-texte .text-left {
+    float: left;
+    margin: 80px 0 0 150px;
+}
+.graph-texte h2 {
+    color: #384141;
+    font-size: 4em;
+}
+.graph-texte .span-color {
+    color: #008ebf;
+}
+.graph-texte p {
+    font-size: 1.2em;
+    float: left;
+    line-height: 25px;
+    margin-top: 30px;
+    color: #808080;
+}
+/* INSCRIPTION ET CONNEXION */
+.formulaires {
+    margin: 0 auto;
+    width: 50%;
+    max-width: 400px;
+    background-color: white;
+    margin-top: 120px;
+}
+.formulaires .formdiv {
+    margin-bottom: 20px;
+}
+.formulaires label {
+    font-size: 0.8em;
+    color: #008ebf;
+    margin-top: 180px;
+}
+.formulaires input[type=text], .formulaires input[type=password], .formulaires input[type=email] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #f1f1f1;
+}
+.formulaires input[type=submit] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #f1f1f1;
+    color: dimgrey;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+#mpoublie {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #008ebf;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 145px;
+}
+#susub {
+    margin-bottom: 80px;
+}
+#submp {
+    margin-bottom: 200px;
+}
+.formulaires p {
+    color: red;
+    font-size: 0.7em;
+}
+.formulaires a {
+    font-size: 0.8em;
+    color: #008ebf;
+}
+textarea {
+    resize: none;
+}
+
+
+.wrap-tab{
+    width: 80%;
+    margin: 0 auto;
+}
+#tableau {
+    color: black;
+    margin: 0 auto;
+}
+#tableau th{
+    border: solid 1px white;
+    background-color: #25313C;
+    color: white;
+    font-size: 1.4em;
+    margin-right: 10px;
+    vertical-align: middle;
+    padding: 10px 5px 10px 5px;
+}
+#tableau td{
+    border: solid 1px #25313C;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 0 5px 0;
+}
+.tcpudp {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    padding: 100px 0 100px 0;
+}
+.constructeur {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+/* CGU */
+.cgu {
+  text-align: center;
+}

@@ -10,9 +10,17 @@
 <body>
 <header>
     <nav>
+      <div>
+        <a href="index.php">
+          <img class="logo" src="asset/img/cv-teklogo.png" alt="logo Nfactory Stats">
+        </a>
         <ul>
             <li><a href="index.php">Home</a></li>
+            <li><a href="presentation.php">Présentation du site</a></li>
+            <li><a href="inscription.php">Inscription</a></li>
+            <li><a href="connexion.php">Connexion</a></li>
         </ul>
+      </div>
     </nav>
 </header>
 
