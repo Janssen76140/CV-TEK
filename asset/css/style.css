@@ -80,7 +80,7 @@ footer {
     position: absolute;
     width: 100%;
     padding: 20px 0 20px 0;
-    bottom: 0px;
+    bottom: -40px;
     color: white;
     text-align: center;
     background-color: #4682B4;
