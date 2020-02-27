@@ -1,7 +1,7 @@
 <?php
 spl_autoload_register();
 
-use Inc\Repository\ArticleRepository;
+use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;
 use \Inc\Service\Validation;
 
@@ -45,5 +45,6 @@ include('inc/header.php'); ?>
 
     <?= $form->submit(); ?>
 </form>
+<a href="mdpOublie.php">Mot de passe oublié ?</a>
 
 <?php include('inc/footer.php');

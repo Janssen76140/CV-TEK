@@ -52,4 +52,13 @@ class ArticleRepository
         $query->bindValue(':token', $token, \PDO::PARAM_STR);
         $query->execute();
     }
+
+    public function modifPassword($email)
+    {
+        $sql = "SELECT email, token FROM $this->table where email = :email";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':email',$email,PDO::PARAM_STR);
+        $query->execute();
+        $user = $query->fetch();
+    }
 }
