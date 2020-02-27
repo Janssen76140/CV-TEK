@@ -26,7 +26,7 @@ if (!empty($_POST['submitted'])) {
         $repo = new ArticleRepository;
         $register = $repo->insertRechercheur($mail, $mdp);
         $success = true;
-        //header('Location: connexion.php');
+        header('Location: connexion.php');
     }
 }
 

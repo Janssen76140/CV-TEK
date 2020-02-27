@@ -28,7 +28,7 @@ class Validation
             $errors['mail'] = 'Veuillez renseigner un email valide';
         } else {
             $pdo = LocalPdo::getPdo();
-            $sql = "SELECT id FROM users WHERE mail = :mail LIMIT 1";
+            $sql = "SELECT id FROM users_recruteur WHERE email = :mail LIMIT 1";
             $query = $pdo->prepare($sql);
             $query->bindValue(':mail', $mail, \PDO::PARAM_STR);
             $query->execute();

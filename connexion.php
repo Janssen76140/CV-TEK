@@ -22,10 +22,10 @@ if (!empty($_POST['submitted'])) {
     if (count($errors) == 0) {
         // INSERT into
         $repo = new ArticleRepository;
-        $login = $repo->findByEmailAndPassword($mail, $password);
+        $login = $repo->findByEmail($mail);
 
         $success = true;
-        //header('Location: index.php');
+        header('Location: index.php');
     }
 }
 

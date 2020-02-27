@@ -12,7 +12,7 @@ class ArticleRepository
     public function findByEmail($mail)
     {
         $pdo = LocalPdo::getPdo();
-        $sql = "SELECT * FROM $this->table WHERE mail = :mail";
+        $sql = "SELECT * FROM $this->table WHERE email = :mail";
         $query = $pdo->prepare($sql);
         $query->bindValue(':mail', $mail, \PDO::PARAM_STR);
         $query->execute();
