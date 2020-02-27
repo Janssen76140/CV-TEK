@@ -4,8 +4,16 @@ include('inc/function.php');
 include('inc/header.php'); ?>
 
 <main>
-    <div class="wrap" id="image"><img src="asset/img/trou-noir-espace-univers-astronomie.jpg" alt=""></div>
-
+  <div class="flexslider header">
+    <ul class="slides">
+      <li>
+        <div class="wrap" id="image"><img src="asset/img/trou-noir-espace-univers-astronomie.jpg" alt=""></div>
+      </li>
+      <li>
+        <div class="wrap" id="image"><img src="asset/img/trou-noir-espace-univers-astronomie-etoile.jpg" alt=""></div>
+      </li>
+    </ul>
+  </div>
 </main>
 
 <section id="tronbinoscope">
