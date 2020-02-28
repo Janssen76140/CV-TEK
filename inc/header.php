@@ -2,7 +2,7 @@
 <html lang="fr" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <title><?php if(!empty($title)) {echo $title;} else {echo 'nom du site';} ?> </title>
+    <title><?php if(!empty($title)) {echo $title;} else {echo 'CV-TEK';} ?> </title>
     <link rel="stylesheet" href="asset/css/style.css">
     <link rel="stylesheet" href="asset/flexslider/flexslider.css" type="text/css">
 </head>

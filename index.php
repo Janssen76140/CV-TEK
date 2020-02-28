@@ -1,6 +1,7 @@
 <?php
-include('inc/function.php');
-
+session_start();
+require('inc/function.php');
+require('inc/pdo.php');
 include('inc/header.php'); ?>
 
 <main>
@@ -8,10 +9,13 @@ include('inc/header.php'); ?>
   <div class="flexslider">
     <ul class="slides">
       <li>
-        <img src="asset/img/trou-noir-espace-univers-astronomie.jpg" alt="">
+        <img src="asset/img/dailycoffee.jpg" alt="">
       </li>
       <li>
-        <img src="asset/img/trou-noir-espace-univers-astronomie-etoiles.jpg" alt="">
+        <img src="asset/img/webinfographics.jpg" alt="">
+      </li>
+      <li>
+        <img src="asset/img/smartdocuments.jpg" alt="">
       </li>
     </ul>
   </div>

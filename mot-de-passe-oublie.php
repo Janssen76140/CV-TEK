@@ -2,7 +2,7 @@
 session_start();
 include('inc/function.php');
 include('inc/pdo.php');
-$title = 'Mot de pass oublié';
+$title = 'Mot de passe oublié';
 $errors = array();
 $success = false;
 
