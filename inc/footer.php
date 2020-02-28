@@ -15,7 +15,7 @@
             <input type="text" id="object" name="object" placeholder="Objet..">
 
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Message.." "></textarea>
+            <textarea id="message" name="message" placeholder="Message.." "/>
 
             <input type="submit" value="Submit">
 
