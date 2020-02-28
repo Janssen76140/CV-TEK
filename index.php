@@ -27,7 +27,11 @@ if (isset($terme))
     <input type="submit" name="submit" value="Rechercher">
 </form>
 
-
+<?php
+foreach ($recherches as $recherche){
+    echo "<div>". $recherche['nom'] , "<br>". $recherche['prenom'];
+}
+?>
 
 <?php
 require ('inc/footer.php');
