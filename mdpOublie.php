@@ -4,6 +4,7 @@ spl_autoload_register();
 use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;
 use \Inc\Service\Validation;
+use \Inc\Utils;
 
 $title = "Modifier le mot de passe";
 $errors = array();
@@ -28,7 +29,7 @@ if (!empty($_POST['submitted'])) {
         $errors['email'] = 'Veuillez renseigner un mot de passe';
     }
 
-
+    $form = new Form($errors);
 
 }
 
