@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title><?php if(!empty($title)) {echo $title;} else {echo 'nom du site';} ?> </title>
-    <link rel="stylesheet" href="assets/css/flexslider.css">
     <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/flexslider/flexslider.css" type="text/css">
 </head>
 
 
