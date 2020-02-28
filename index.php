@@ -1,12 +1,20 @@
 <?php
-require('vendor/autoload.php');
+session_start();
+require ('inc/header.php');
+require('functions/function.php');
+require ('inc/pdo.php');
+?>
 
-use Cocur\Slugify\Slugify;
+<form action = "index.php" method = "get">
+    <input type="search" name="terme">
+    <input type="submit" name="submit" value="Rechercher">
+</form>
 
-$slugify = new Slugify();
-echo $slugify->slugify('Hello World!');
+<?php
 
 
+<?php
+require ('inc/footer.php');
 
 
 
