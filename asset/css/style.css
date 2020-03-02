@@ -1,1 +1,23 @@
 @import "reset.css";
+
+
+
+form h2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.createcv-form {
+    display: flex;
+}
+
+form {
+    flex: 1;
+}
+
+.createcv-view
+{
+    flex: 1;
+    border: 3px solid black;
+}
+
