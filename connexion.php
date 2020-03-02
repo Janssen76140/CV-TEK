@@ -30,7 +30,7 @@ if (!empty($_POST['submitted'])) {
 
 $form = new Form($errors);
 
-include('inc/header.php'); ?>
+include('Inc/header.php'); ?>
 
 <form action="" method="post">
 
@@ -47,4 +47,4 @@ include('inc/header.php'); ?>
 <a href="mdpOublie.php">Mot de passe oublié ?</a>
 <p>Pas de compte ? <a href="inscription.php"> Inscrivez-vous</a></p>
 
-<?php include('inc/footer.php');
+<?php include('Inc/footer.php');

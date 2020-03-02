@@ -45,7 +45,7 @@ if (!empty($_POST['submitted'])) {
 
 $form = new Form($errors);
 
-include('inc/header.php'); ?>
+include('Inc/header.php'); ?>
 
 <h2>Inscription recruteur</h2>
 
@@ -91,4 +91,4 @@ include('inc/header.php'); ?>
 </form>
 <button><a href="inscription.php">Je suis rechercheur d'emploi</a></button>
 
-<?php include('inc/footer.php');
+<?php include('Inc/footer.php');
