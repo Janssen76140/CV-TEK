@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('inc/function.php');
+include('inc/header.php'); ?>
 <div class="cgu">
     <div class="clear"></div>
 
@@ -208,3 +212,4 @@
     <a href="inscription.php?condition=yes"><input id="but" type="button" value="J'accepte" name="accepter"></a>
 
 </div>
+<?php include('inc/footer.php'); ?>
