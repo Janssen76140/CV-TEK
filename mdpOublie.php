@@ -39,7 +39,7 @@ include('Inc/header.php'); ?>
 
 <h2>Changer de mot de passe</h3>
 
-<form action="" method="post">
+<form action="" method="post" class="forgetpass">
 
     <?= $form->label('password', 'Nouveaux mot de passe'); ?>
     <?= $form->input('password', 'password'); ?>
