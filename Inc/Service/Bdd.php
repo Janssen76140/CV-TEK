@@ -33,4 +33,11 @@ class Bdd
         return $query->fetchAll();
     }
 
+    function delete($user){
+        $pdo = LocalPdo::getPdo();
+        $sql = "DELETE  FROM $this->table WHERE id= '$user'";
+        $query = $pdo->prepare($sql);
+        $query->execute();
+    }
+
 }
