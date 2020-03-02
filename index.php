@@ -1,14 +1,14 @@
 <?php
 session_start();
 require ('inc/header.php');
-require('functions/function.php');
+require('inc/function.php');
 require ('inc/pdo.php');
 
 if (isset($_GET["submit"]) AND $_GET["submit"] == "Rechercher")
 {
     $_GET["terme"] = htmlspecialchars($_GET["terme"]);
     $terme = $_GET["terme"];
-
+    $terme = trim($terme);
      $terme = strip_tags($terme);
 }
 if (isset($terme)) {
