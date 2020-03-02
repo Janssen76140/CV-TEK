@@ -1,4 +1,6 @@
 <?php
+
+$title = 'Accueil';
 include('Inc/header.php');?>
 
     <section class="wrap" id="projets-section">
