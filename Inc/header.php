@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title><?php if (!empty($title)) {echo $title;} else {echo 'nom du site';} ?> </title>
-    <link rel="stylesheet" href="/asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/style.css">
 
 </head>
 
