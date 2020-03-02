@@ -1,7 +1,5 @@
 <?php
-include('inc/function.php');
 
-include ('inc/function.php');
 //include ('inc/pdo.php');
 
 
@@ -19,11 +17,11 @@ include ('inc/function.php');
 //    $recherches = $query->fetchAll();
 ////    var_dump($recherches);
 //}
-//?>
+include('inc/header.php')?>
 
     <section class="wrap" id="projets-section">
         <div class="text-section-projet">
-            <h2>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h2
+            <h2>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h2>
             <p>
                 LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem <br>
                 LoremLoremLoremLoremLoremLoremLorem
