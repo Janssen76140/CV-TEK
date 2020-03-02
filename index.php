@@ -1,19 +1,8 @@
 <?php
-include ('inc/function.php');
-//include ('inc/pdo.php');
-
-
-
-
-
-include('inc/header.php'); ?>
-
-
-<?php include('inc/footer.php');
 
 require ('inc/header.php');
 require('functions/function.php');
-require ('inc/pdo.php');
+
 
 if (isset($_GET["submit"]) AND $_GET["submit"] == "Rechercher")
 {
