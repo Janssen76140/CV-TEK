@@ -34,7 +34,7 @@ if (!empty($_POST['submitted'])) {
 }
 
 
-include('inc/header.php'); ?>
+include('Inc/header.php'); ?>
 
 
 <h2>Changer de mot de passe</h3>
@@ -52,4 +52,4 @@ include('inc/header.php'); ?>
     <?= $form->submit(); ?>
 </form>
 
-<?php include ('inc/footer.php');
+<?php include('Inc/footer.php');
