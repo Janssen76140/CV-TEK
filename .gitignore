@@ -170,3 +170,6 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/osx,linux,macos,windows,phpstorm+all
 
 /inc/pdo.php
+/asset/images
+/asset/media
+/asset/fittext
