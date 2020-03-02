@@ -39,7 +39,7 @@ if (!empty($_POST['submitted'])) {
 
 $form = new Form($errors);
 
-include('inc/header.php'); ?>
+include('Inc/header.php'); ?>
 
 <h3>Mon compte</h3>
 <span>Mes informations</span> <?php
@@ -75,4 +75,4 @@ if ($userId != false) {
     <?= $form->submit(); ?>
 </form>
 
-<?php include('inc/footer.php');
+<?php include('Inc/footer.php');

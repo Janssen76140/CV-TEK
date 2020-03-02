@@ -34,12 +34,12 @@ if (!empty($_POST['submitted'])) {
 }
 
 
-include('inc/header.php'); ?>
+include('Inc/header.php'); ?>
 
 
 <h2>Changer de mot de passe</h3>
 
-<form action="" method="post">
+<form action="" method="post" class="forgetpass">
 
     <?= $form->label('password', 'Nouveaux mot de passe'); ?>
     <?= $form->input('password', 'password'); ?>
@@ -52,4 +52,4 @@ include('inc/header.php'); ?>
     <?= $form->submit(); ?>
 </form>
 
-<?php include ('inc/footer.php');
+<?php include('Inc/footer.php');
