@@ -22,7 +22,7 @@ if (!empty($_POST['submitted'])) {
 
     if (count($errors) == 0) {
         // INSERT into
-        
+
         $repo = new ArticleRepository;
         $register = $repo->insertRechercheur($mail, $mdp);
         $success = true;
@@ -36,21 +36,26 @@ include('inc/header.php'); ?>
 
 <h2>Inscription dépot de CV</h2>
 
-<form action="" method="post">
+<form action="" method="post" class="inscuser">
 
+  <div class="formdiv">
     <?= $form->label('mail', 'Email'); ?>
     <?= $form->input('mail', 'text'); ?>
     <?= $form->errors('mail'); ?>
-
+  </div>
+  <div class="formdiv">
     <?= $form->label('password', 'Mot de passe'); ?>
     <?= $form->input('password', 'password'); ?>
     <?= $form->errors('password'); ?>
-
+  </div>
+  <div class="formdiv">
     <?= $form->label('password2', 'Confirmez votre mot de passe'); ?>
     <?= $form->input('password2', 'password'); ?>
     <?= $form->errors('password2'); ?>
-
+  </div>
+  <div class="candid">
     <?= $form->submit(); ?>
+  </div>
 </form>
 <button><a href="inscriptionRecruteur.php">Je suis recruteur</a></button>
 
