@@ -16,7 +16,7 @@
             <li><a href="index.php">Accueil</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
-            <li class="inscription-nav"><a href="#">Inscription</a></li>
+            <li class="inscription-nav"><a href="inscription.php">Inscription</a></li>
             <li class="connexion-nav"><a href="connexion.php">Connexion</a></li>
             <li><a href="admin/index.php">Pannel admin</a></li>
         </ul>
