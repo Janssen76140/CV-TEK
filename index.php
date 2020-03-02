@@ -1,25 +1,9 @@
 <?php
-spl_autoload_register();
-
-use Inc\Service\SearchBar;
-$search = new SearchBar();
-$getword = $search ->getWord();
-$recherches = $search ->findWord($getword);
-
-foreach ($recherches as $recherche) {
-    echo "<div>" . $recherche['nom'], "<br>" . $recherche['prenom'] ."</div>";
-}
-
 include('Inc/header.php');?>
-    <form action="index.php" method="get">
-        <label for="terme" id="terme"></label>
-        <input type="search" name="terme" id="terme">
-        <input type="submit" name="submit" value="Rechercher">
-    </form>
 
     <section class="wrap" id="projets-section">
         <div class="text-section-projet">
-            <h2>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h2
+            <h2>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h2>
             <p>
                 LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem <br>
                 LoremLoremLoremLoremLoremLoremLorem
