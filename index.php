@@ -1,23 +1,5 @@
 <?php
-
-//include ('inc/pdo.php');
-
-
-//if (isset($_GET["submit"]) AND $_GET["submit"] == "Rechercher") {
-//    $_GET["terme"] = htmlspecialchars($_GET["terme"]);
-//    $terme = $_GET["terme"];
-//    $terme = trim($terme);
-//    $terme = strip_tags($terme);
-//}
-//if (isset($terme)) {
-//    $terme = strtolower($terme);
-//    $sql = "SELECT nom, prenom FROM users_recruteur WHERE nom LIKE ? OR prenom LIKE ? ";
-//    $query = $pdo->prepare($sql);
-//    $query->execute(array("%" . $terme . "%", "%" . $terme . "%"));
-//    $recherches = $query->fetchAll();
-////    var_dump($recherches);
-//}
-include('inc/header.php')?>
+include('Inc/header.php');?>
 
     <section class="wrap" id="projets-section">
         <div class="text-section-projet">
@@ -92,19 +74,9 @@ include('inc/header.php')?>
     </section>
 
 
-<?php include('inc/footer.php'); ?>
+<?php include('Inc/footer.php');
 
 
-    <form action="index.php" method="get">
-        <label for="terme" id="terme"></label>
-        <input type="search" name="terme" id="terme">
-        <input type="submit" name="submit" value="Rechercher">
-    </form>
-
-<?php
-//foreach ($recherches as $recherche) {
-//    echo "<div>" . $recherche['nom'], "<br>" . $recherche['prenom'];
-//}
 
 
 

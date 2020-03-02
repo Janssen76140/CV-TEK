@@ -59,7 +59,7 @@ if (!empty($_GET['token']) && !empty($_GET['email'])) {
 
 }
 
-include ('inc/header.php'); ?>
+include('Inc/header.php'); ?>
 
 
 <h2>Modifier votre mot de passe</h3>
@@ -74,4 +74,4 @@ include ('inc/header.php'); ?>
 </form>
 
 
-<?php include ('inc/footer.php');
+<?php include('Inc/footer.php');
