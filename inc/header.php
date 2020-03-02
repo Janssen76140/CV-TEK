@@ -12,8 +12,10 @@
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
+            <li><a href="admin/index.php" >Pannel admin</a></li>
         </ul>
     </nav>
 </header>
+<body>
 
 <div id="wrap">
