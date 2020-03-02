@@ -1,4 +1,4 @@
-<? include('inc/header.php'); ?>
+<? include('Inc/header.php'); ?>
 
 <div class="Mentions-légales">
 

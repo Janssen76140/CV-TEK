@@ -1,153 +1,198 @@
 @import "reset.css";
 
-#wrap {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1800px;
-  padding-top: 90px;
+.wrap {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1800px;
 }
 
-html {
-  height: 100%;
+.wrap2 {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
 }
+
 body {
-  position: relative;
-  margin: 0;
-  min-height: 100%;
-  font-family: 'Candara', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+    font-size: 1.2em;
 }
-button {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
-  color: #89b927;
-  font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 40px;
+
+header nav {
+    position: fixed;
+    background-color: #1d2833;
+    z-index: 100;
+    padding: 15px;
 }
-button:hover {
-  background: darkgrey;
+
+header nav, header nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
-/* HEADER */
-header nav .logo {
-  height: 50px;
-  float: left;
-  margin: 20px 0 0 20px;
+
+header nav .inscription-nav, .connexion-nav {
+    border-radius: 20px;
+    background: #89b927;
+    color: #fff;
+    padding: 6px;
+    margin-right: 10px;
 }
-header nav ul {
-  float: right;
-  margin-top: 40px;
+
+header nav h1 a {
+    color: #89b927;
 }
-header nav ul li {
-  float: left;
-  margin-right: 40px;
-}
+
 header nav ul li a {
-  padding: 15px 30px;
-  text-decoration: none;
-  color: white;
-  background-color: #4682B4;
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+    color: white;
+
 }
-header nav ul li a:hover {
-  color: #008ebf;
+
+header .wrap .image-header {
+    background-image: url("../../asset/images/slide3new.jpg");
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
-/* INSCRIPTION DU CANDIDAT */
-.inscuser {
-  margin: 0 auto;
-  width: 50%;
-  max-width: 400px;
-  background-color: white;
-  font-size: 0.8em;
-  color: #89b927;
+
+.centered {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-.inscuser .formdiv {
-  margin-bottom: 20px;
+
+/*********
+PROJETS
+ *********/
+#projets-section .text-section-projet {
+    text-align: center;
+    padding-top: 70px;
+
 }
-.inscuser [type=text], [type=password] {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
+
+
+#projets-section .text-section-projet h2 {
+    font-size: 45px;
+    font-weight: bold;
 }
-.candid [type=submit] {
-  text-align: center;
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
-  color: #89b927;
-  font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 40px;
+
+#projets-section .row {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding-top: 70px;
 }
-.candid [type=submit]:hover {
-  background-color: darkgrey;
+
+#projets-section .row .column {
+    width: 25%;
+    padding: 50px
+
 }
-/* INSCRIPTION DU RECRUTEUR */
-.inscrecruteur {
-  margin: 0 auto;
-  width: 50%;
-  max-width: 400px;
-  background-color: white;
-  margin-top: 120px;
-  font-size: 0.8em;
-  color: #89b927;
+
+#projets-section .row figure {
+    margin: 0 0 50px;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    padding: 30px 0;
+    background-color: #f9f9f9;
+    border-radius: 0 35px;
 }
-.inscrecruteur .formdiv {
-  margin-bottom: 20px;
+
+#projets-section .row figure:hover {
+    background-color: #f2f2f2;
 }
-.inscrecruteur [type=text], [type=password], [type=number] {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
+
+#projets-section .row .column figure img:hover {
+    transform: scale(1.175);
+    transition: 0.6s;
 }
-.recrut [type=submit] {
-  text-align: center;
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background-color: #1d2833;
-  color: #89b927;
-  font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 40px;
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-attachment: fixed;
 }
-.recrut [type=submit]:hover {
-  background-color: darkgrey;
+
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
 }
-/* CONNEXION */
-.connexion {
-  margin: 0 auto;
-  width: 50%;
-  max-width: 400px;
-  background-color: white;
-  font-size: 0.8em;
-  color: #89b927;
+
+.text-section-video {
+    text-align: center;
+    padding-top: 70px;
 }
-.connexion .formdiv {
-  margin-bottom: 20px;
+
+.text-section-video h3 {
+    font-size: 45px;
+    font-weight: bold;
 }
-.connexion [type=text], [type=password] {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
+
+label {
+    display: block;
 }
-.login [type=submit] {
-  text-align: center;
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
-  color: #89b927;
-  font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 40px;
+
+footer h2 {
+    font-size: 45px;
+    font-weight: bold;
 }
-.login [type=submit]:hover {
-  background-color: lightgrey;
+
+form {
+    text-align: center;
+}
+form label{
+    color: white;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], input[type=email] , textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #89b927;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    transform: scale(1.175);
+    transition: 0.6s;
+}
+
+/* Add a background color and some padding around the form */
+.form-footer {
+    border-radius: 5px;
+    background-color: #1d2833;
+    padding: 20px;
+}
+
+textarea {
+    height: 200px;
 }

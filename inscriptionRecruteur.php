@@ -45,7 +45,7 @@ if (!empty($_POST['submitted'])) {
 
 $form = new Form($errors);
 
-include('inc/header.php'); ?>
+include('Inc/header.php'); ?>
 
 <h2>Inscription recruteur</h2>
 

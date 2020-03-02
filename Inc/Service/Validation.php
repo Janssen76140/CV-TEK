@@ -65,6 +65,7 @@ class Validation
             if (!empty($user)) {
 
                 if (password_verify($password, $user->getPassword())) {
+                    session_start();
                     $_SESSION['login'] = array(
                         'id'     => $user->getId(),
                         'mail'   => $user->getMail(),
@@ -72,8 +73,7 @@ class Validation
                     );
     
                     // Debug *_SESSION
-                    header('location: index.php');
-    
+
                 } else {
                     $errors['mail'] = 'Pseudo ou email inconnu ou mot de passe oublié';
                 }

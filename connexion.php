@@ -9,7 +9,6 @@ $title = "Connexion";
 $errors = array();
 $success = false;
 
-
 if (!empty($_POST['submitted'])) {
     // FAILLE XSS
     $mail   = trim(strip_tags($_POST['mail']));
@@ -22,16 +21,16 @@ if (!empty($_POST['submitted'])) {
     if (count($errors) == 0) {
         // INSERT into
         $repo = new ArticleRepository;
-        $login = $repo->findByEmail($mail);
+        $user = $repo->findByEmail($mail);
 
         $success = true;
-        header('Location: index.php');
+        header('Location: compte.php');
     }
 }
 
 $form = new Form($errors);
 
-include('inc/header.php'); ?>
+include('Inc/header.php'); ?>
 
 <form action="" method="post" class="connexion">
 
@@ -46,10 +45,10 @@ include('inc/header.php'); ?>
       <?= $form->errors('password'); ?>
     </div>
       <a href="mdpOublie.php">Mot de passe oublié ?</a>
+      <p>Pas de compte ? <a href="inscription.php"> Inscrivez-vous</a></p>
     <div class="login">
       <?= $form->submit(); ?>
     </div>
 </form>
 
-
-<?php include('inc/footer.php');
+<?php include('Inc/footer.php');

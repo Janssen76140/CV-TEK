@@ -79,7 +79,8 @@ class Utils
 
     function is_logged()
     {
-        $roles = array('abonne', 'admin');
+        session_start();
+        $roles = array('recruteur', 'admin', 'utilisateur');
         if (!empty($_SESSION['login'])) {
             if (!empty($_SESSION['login']['id']) && is_numeric($_SESSION['login']['id'])) {
                 if (!empty($_SESSION['login']['pseudo'])) {
@@ -93,6 +94,25 @@ class Utils
                 }
             }
         }
+        return false;
+    }
+
+    function isAdmin()
+    {
+        if (isLogged()) {
+            if (!empty($_SESSION['login']['role'] === 'admin')) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function getCurrentUserId()
+    {
+        session_start();
+        if (!empty($_SESSION['login']['id']) && is_numeric($_SESSION['login']['id'])) {
+            return $_SESSION['login']['id'];
+        } 
         return false;
     }
 }
