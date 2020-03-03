@@ -197,3 +197,21 @@ textarea {
     height: 200px;
 }
 
+/*ADMIN*/
+.row table {
+   width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.row th {
+    border: 1px solid grey;
+    font-weight: bold;
+    height: 30px;
+    padding-top: 5px;
+}
+.row td {
+    width: 300px;
+    border: 1px solid grey;
+    height: 50px;
+    padding-top: 10px;
+}
