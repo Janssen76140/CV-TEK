@@ -15,8 +15,8 @@
         <h1><a href="">CV Projekt</a></h1>
         <ul>
             <li><a href="index.php">Accueil</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="index.php#service">Services</a></li>
+            <li><a href="index.php#contact">Contact</a></li>
             <li><a href="CreateCv.php">Creation CV</a></li>
             <li class="inscription-nav"><a href="inscription.php">Inscription</a></li>
             <li class="connexion-nav"><a href="connexion.php">Connexion</a></li>
