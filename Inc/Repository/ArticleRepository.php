@@ -53,6 +53,26 @@ class ArticleRepository
         $query->execute();
     }
 
+    public function insertTitreCv($nom, $prenom, $email, $nomEntreprise, $adresse, $telephone, $siret, $mdp)
+    {
+        $hashPassword = password_hash($mdp, PASSWORD_BCRYPT);
+        $token = Utils::generatorToken(120);
+
+        $pdo = LocalPdo::getPdo();
+        $sql = "INSERT INTO $this->table VALUES (NULL, :nom, :prenom, :mail, :nomEntreprise, :adresse, :telephone, :siret, :mdp, :token, 'recruteur')";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':nom', $nom, \PDO::PARAM_STR);
+        $query->bindValue(':prenom', $prenom, \PDO::PARAM_STR);
+        $query->bindValue(':mail', $email, \PDO::PARAM_STR);
+        $query->bindValue(':nomEntreprise', $nomEntreprise, \PDO::PARAM_STR);
+        $query->bindValue(':adresse', $adresse, \PDO::PARAM_STR);
+        $query->bindValue(':telephone', $telephone, \PDO::PARAM_STR);
+        $query->bindValue(':siret', $siret, \PDO::PARAM_STR);
+        $query->bindValue(':mdp', $hashPassword, \PDO::PARAM_STR);
+        $query->bindValue(':token', $token, \PDO::PARAM_STR);
+        $query->execute();
+    }
+
     public function modifPassword($email)
     {
         $pdo = LocalPdo::getPdo();
