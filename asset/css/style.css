@@ -39,7 +39,6 @@ body {
 }
 
 header nav {
-    position: fixed;
     background-color: #1d2833;
     z-index: 100;
     padding: 15px;

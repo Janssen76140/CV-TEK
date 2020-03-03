@@ -4,10 +4,13 @@ spl_autoload_register();
 use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;
 use \Inc\Service\Validation;
+use Inc\Utils;
 
 $title = "Création de CV";
 $errors = array();
 $succes = false;
+$utils = new Utils;
+$userId = $utils->getCurrentUserId();
 
 if (!empty($_POST['envoyer_cv'])) {
     // FAILLE XSS
@@ -30,24 +33,24 @@ if (!empty($_POST['envoyer_cv'])) {
     $v = new Validation();
     $v->validChamp($errors, $titre_cv, 'titre_cv', 2, 50);
     $v->validChamp($errors, $accroche_cv, 'accroche_cv', 2, 1000);
-    $v->validChamp($errors, $intitule_poste, 'intitule_poste', 2, 50);
-    $v->validChamp($errors, $nom_entreprise, 'nom_entreprise', 2, 50);
-    $v->validChamp($errors, $description_experience, 'description_experience', 2, 1000);
-    $v->validChamp($errors, $nom_formation, 'nom_formation', 2, 50);
-    $v->validChamp($errors, $nom_ecole, 'nom_ecole', 2, 50);
-    $v->validChamp($errors, $ville_ecole, 'ville_ecole', 2, 50);
-    $v->validChamp($errors, $description_formation, 'description_formation', 2, 1000);
-    $v->validChamp($errors, $centre_interet, 'centre_interet', 2, 50);
-    $v->validChamp($errors, $competences, 'competences', 2, 50);
+    // $v->validChamp($errors, $intitule_poste, 'intitule_poste', 2, 50);
+    // $v->validChamp($errors, $nom_entreprise, 'nom_entreprise', 2, 50);
+    // $v->validChamp($errors, $description_experience, 'description_experience', 2, 1000);
+    // $v->validChamp($errors, $nom_formation, 'nom_formation', 2, 50);
+    // $v->validChamp($errors, $nom_ecole, 'nom_ecole', 2, 50);
+    // $v->validChamp($errors, $ville_ecole, 'ville_ecole', 2, 50);
+    // $v->validChamp($errors, $description_formation, 'description_formation', 2, 1000);
+    // $v->validChamp($errors, $centre_interet, 'centre_interet', 2, 50);
+    // $v->validChamp($errors, $competences, 'competences', 2, 50);
 
 
     if (count($errors) == 0) {
         // INSERT into
         
         $repo = new ArticleRepository;
-        $register = $repo->insertRecruteur($titre_cv,$accroche_cv,$email,$nomEntreprise,$adresse,$telephone,$siret,$password);
+        $register = $repo->insertTitreCv($userId, $titre_cv,$accroche_cv);
         $success = true;
-        header('Location: connexion.php');
+        //header('Location: CreateCv.php');
     }
 }
 
