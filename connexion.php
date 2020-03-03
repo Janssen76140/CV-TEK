@@ -9,7 +9,6 @@ $title = "Connexion";
 $errors = array();
 $success = false;
 
-
 if (!empty($_POST['submitted'])) {
     // FAILLE XSS
     $mail   = trim(strip_tags($_POST['mail']));
@@ -22,29 +21,34 @@ if (!empty($_POST['submitted'])) {
     if (count($errors) == 0) {
         // INSERT into
         $repo = new ArticleRepository;
-        $login = $repo->findByEmail($mail);
+        $user = $repo->findByEmail($mail);
 
         $success = true;
-        header('Location: index.php');
+        header('Location: compte.php');
     }
 }
 
 $form = new Form($errors);
 
-include('inc/header.php'); ?>
+include('Inc/header.php'); ?>
 
-<form action="" method="post">
+<form action="" method="post" class="connexion">
 
-    <?= $form->label('mail', 'Email'); ?>
-    <?= $form->input('mail', 'text'); ?>
-    <?= $form->errors('mail'); ?>
-
-    <?= $form->label('password', 'Mot de passe'); ?>
-    <?= $form->input('password', 'password'); ?>
-    <?= $form->errors('password'); ?>
-
-    <?= $form->submit(); ?>
+    <div class="formdiv">
+      <?= $form->label('mail', 'Email'); ?>
+      <?= $form->input('mail', 'text'); ?>
+      <?= $form->errors('mail'); ?>
+    </div>
+    <div class="formdiv">
+      <?= $form->label('password', 'Mot de passe'); ?>
+      <?= $form->input('password', 'password'); ?>
+      <?= $form->errors('password'); ?>
+    </div>
+      <a href="mdpOublie.php">Mot de passe oublié ?</a>
+      <p>Pas de compte ? <a href="inscription.php"> Inscrivez-vous</a></p>
+    <div class="login">
+      <?= $form->submit(); ?>
+    </div>
 </form>
-<a href="mdpOublie.php">Mot de passe oublié ?</a>
 
-<?php include('inc/footer.php');
+<?php include('Inc/footer.php');

@@ -27,7 +27,7 @@ class ArticleRepository
         $pdo = LocalPdo::getPdo();
         $sql = "INSERT INTO $this->table VALUES (NULL, :nom, :prenom, :mail, :nomEntreprise, :adresse, :telephone, :siret, :mdp, :token, 'recruteur')";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':nom', $prenom, \PDO::PARAM_STR);
+        $query->bindValue(':nom', $nom, \PDO::PARAM_STR);
         $query->bindValue(':prenom', $prenom, \PDO::PARAM_STR);
         $query->bindValue(':mail', $email, \PDO::PARAM_STR);
         $query->bindValue(':nomEntreprise', $nomEntreprise, \PDO::PARAM_STR);
@@ -61,5 +61,28 @@ class ArticleRepository
         $query->bindValue(':email',$email, \PDO::PARAM_STR);
         $query->execute();
         $user = $query->fetch();
+    }
+
+    public function selectInfo($id)
+    {
+        $pdo = LocalPdo::getPdo();
+        $sql = "SELECT * FROM $this->table WHERE id = :id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':id', $id, \PDO::PARAM_STR);
+        $query->execute();
+        return $query->fetch();
+    }
+
+    public function insertInfo($userId, $nom, $prenom, $adresse, $telephone)
+    {
+        $pdo = LocalPdo::getPdo();
+        $sql = "UPDATE $this->table SET nom = :nom, prenom = :prenom, adresse = :adresse, telephone = :telephone WHERE id = :id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':id', $userId, \PDO::PARAM_STR);
+        $query->bindValue(':nom', $nom, \PDO::PARAM_STR);
+        $query->bindValue(':prenom', $prenom, \PDO::PARAM_STR);
+        $query->bindValue(':adresse', $adresse, \PDO::PARAM_STR);
+        $query->bindValue(':telephone', $telephone, \PDO::PARAM_STR);
+        $query->execute();
     }
 }
