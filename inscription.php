@@ -9,7 +9,7 @@ $title = "Inscription";
 $errors = array();
 $success = false;
 
-if (!empty($_POST['submitted'])) {
+if (!empty($_POST['envoyer'])) {
     // FAILLE XSS
     $mail    = trim(strip_tags($_POST['mail']));
     $mdp     = trim(strip_tags($_POST['password']));
@@ -22,7 +22,7 @@ if (!empty($_POST['submitted'])) {
 
     if (count($errors) == 0) {
         // INSERT into
-        
+
         $repo = new ArticleRepository;
         $register = $repo->insertRechercheur($mail, $mdp);
         $success = true;
@@ -36,7 +36,7 @@ include('Inc/header.php'); ?>
 
 <h2>Inscription dépot de CV</h2>
 
-<form action="" method="post">
+<form action="" method="post" class="formulaire">
 
     <?= $form->label('mail', 'Email'); ?>
     <?= $form->input('mail', 'text'); ?>
@@ -50,8 +50,10 @@ include('Inc/header.php'); ?>
     <?= $form->input('password2', 'password'); ?>
     <?= $form->errors('password2'); ?>
 
-    <?= $form->submit(); ?>
+  <?= $form->submit('envoyer','S\'inscrire'); ?>
+
 </form>
-<button><a href="inscriptionRecruteur.php">Je suis recruteur</a></button>
+<div class="espace"></div>
+<a class="autreFormulaire" href="inscriptionRecruteur.php">Je suis recruteur</a>
 
 <?php include('Inc/footer.php');

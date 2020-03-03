@@ -1,7 +1,7 @@
 <footer>
 
     <ul>
-        <li><a href="cgu.php">CGU |</a></li>
+        <li><a href="cgu.php">CGU</a></li>
         <li><a href="mentions-legales.php">Mentions légales</a></li>
     </ul>
 

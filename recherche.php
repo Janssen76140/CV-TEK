@@ -1,11 +1,14 @@
 <?php
-if (!isAdmin()){
-    header("Location: 404.php");
-}
-
 spl_autoload_register();
 
 use Inc\Service\SearchBar;
+use Inc\Utils;
+
+$verif = new Utils();
+$verifadmin = $verif->isAdmin();
+if (!isAdmin()){
+    header("Location: 404.php");
+}
 
 $search = new SearchBar();
 $getword = $search->getWord();

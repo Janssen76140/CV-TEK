@@ -9,7 +9,7 @@ $title = "Inscription recruteur";
 $errors = array();
 $success = false;
 
-if (!empty($_POST['submitted'])) {
+if (!empty($_POST['envoyer'])) {
     // FAILLE XSS
     $nom           = trim(strip_tags($_POST['nom']));
     $prenom        = trim(strip_tags($_POST['prenom']));
@@ -35,7 +35,7 @@ if (!empty($_POST['submitted'])) {
 
     if (count($errors) == 0) {
         // INSERT into
-        
+
         $repo = new ArticleRepository;
         $register = $repo->insertRecruteur($nom,$prenom,$email,$nomEntreprise,$adresse,$telephone,$siret,$password);
         $success = true;
@@ -49,46 +49,48 @@ include('Inc/header.php'); ?>
 
 <h2>Inscription recruteur</h2>
 
-<form action="" method="post">
+<form action="" method="post" class="formulaire">
 
-    <?= $form->label('nom', 'Nom'); ?>
-    <?= $form->input('nom', 'text'); ?>
-    <?= $form->errors('nom'); ?>
+      <?= $form->label('nom', 'Nom'); ?>
+      <?= $form->input('nom', 'text'); ?>
+      <?= $form->errors('nom'); ?>
 
-    <?= $form->label('prenom', 'Prénom'); ?>
-    <?= $form->input('prenom', 'text'); ?>
-    <?= $form->errors('prenom'); ?>
+      <?= $form->label('prenom', 'Prénom'); ?>
+      <?= $form->input('prenom', 'text'); ?>
+      <?= $form->errors('prenom'); ?>
 
-    <?= $form->label('mail', 'Email'); ?>
-    <?= $form->input('mail', 'text'); ?>
-    <?= $form->errors('mail'); ?>
+      <?= $form->label('mail', 'Email'); ?>
+      <?= $form->input('mail', 'text'); ?>
+      <?= $form->errors('mail'); ?>
 
-    <?= $form->label('nom_entreprise', 'Nom de votre entreprise'); ?>
-    <?= $form->input('nom_entreprise', 'text'); ?>
-    <?= $form->errors('nom_entreprise'); ?>
+      <?= $form->label('nom_entreprise', 'Nom de votre entreprise'); ?>
+      <?= $form->input('nom_entreprise', 'text'); ?>
+      <?= $form->errors('nom_entreprise'); ?>
 
-    <?= $form->label('adresse', 'Adresse de votre entreprise'); ?>
-    <?= $form->input('adresse', 'text'); ?>
-    <?= $form->errors('adresse'); ?>
+      <?= $form->label('adresse', 'Adresse de votre entreprise'); ?>
+      <?= $form->input('adresse', 'text'); ?>
+      <?= $form->errors('adresse'); ?>
 
-    <?= $form->label('telephone', 'Telephone'); ?>
-    <?= $form->input('telephone', 'number'); ?>
-    <?= $form->errors('telephone'); ?>
+      <?= $form->label('telephone', 'Telephone'); ?>
+      <?= $form->input('telephone', 'number'); ?>
+      <?= $form->errors('telephone'); ?>
 
-    <?= $form->label('siret', 'N° SIRET'); ?>
-    <?= $form->input('siret', 'number'); ?>
-    <?= $form->errors('siret'); ?>
+      <?= $form->label('siret', 'N° SIRET'); ?>
+      <?= $form->input('siret', 'number'); ?>
+      <?= $form->errors('siret'); ?>
 
-    <?= $form->label('password', 'Mot de passe'); ?>
-    <?= $form->input('password', 'password'); ?>
-    <?= $form->errors('password'); ?>
+      <?= $form->label('password', 'Mot de passe'); ?>
+      <?= $form->input('password', 'password'); ?>
+      <?= $form->errors('password'); ?>
 
-    <?= $form->label('password2', 'Confirmez votre mot de passe'); ?>
-    <?= $form->input('password2', 'password'); ?>
-    <?= $form->errors('password2'); ?>
+      <?= $form->label('password2', 'Confirmez votre mot de passe'); ?>
+      <?= $form->input('password2', 'password'); ?>
+      <?= $form->errors('password2'); ?>
 
-    <?= $form->submit(); ?>
+      <?= $form->submit('envoyer','S\'inscrire'); ?>
+    </div>
 </form>
-<button><a href="inscription.php">Je suis rechercheur d'emploi</a></button>
+<div class="espace"></div>
+<a class="autreFormulaire2" href="inscription.php">Je suis rechercheur d'emploi</a>
 
-<?php include('Inc/footer.php');
+<?php include('inc/footer.php');

@@ -9,6 +9,48 @@ $title = "Création de CV";
 $errors = array();
 $succes = false;
 
+if (!empty($_POST['envoyer'])) {
+    // FAILLE XSS
+    $titre_cv           = trim(strip_tags($_POST['titre_cv']));
+    $accroche_cv        = trim(strip_tags($_POST['accroche_cv']));
+    $datedebut = trim(strip_tags($_POST['datedebut']));
+    $datefin       = trim(strip_tags($_POST['datefin']));
+    $intitule_poste     = trim(strip_tags($_POST['intitule_poste']));
+    $nom_entreprise         = trim(strip_tags($_POST['nom_entreprise']));
+    $description_experience      = trim(strip_tags($_POST['description_experience']));
+    $date_formation     = trim(strip_tags($_POST['date_formation']));
+    $nom_formation         = trim(strip_tags($_POST['nom_formation']));
+    $nom_ecole     = trim(strip_tags($_POST['nom_ecole']));
+    $ville_ecole         = trim(strip_tags($_POST['ville_ecole']));
+    $description_formation      = trim(strip_tags($_POST['description_formation']));
+    $centre_interet     = trim(strip_tags($_POST['centre_interet']));
+    $competences         = trim(strip_tags($_POST['competences']));
+
+    // Validation
+    $v = new Validation();
+    $v->validChamp($errors, $titre_cv, 'titre_cv', 2, 50);
+    $v->validChamp($errors, $accroche_cv, 'accroche_cv', 2, 1000);
+    $v->validChamp($errors, $intitule_poste, 'intitule_poste', 2, 50);
+    $v->validChamp($errors, $nom_entreprise, 'nom_entreprise', 2, 50);
+    $v->validChamp($errors, $description_experience, 'description_experience', 2, 1000);
+    $v->validChamp($errors, $nom_formation, 'nom_formation', 2, 50);
+    $v->validChamp($errors, $nom_ecole, 'nom_ecole', 2, 50);
+    $v->validChamp($errors, $ville_ecole, 'ville_ecole', 2, 50);
+    $v->validChamp($errors, $description_formation, 'description_formation', 2, 1000);
+    $v->validChamp($errors, $centre_interet, 'centre_interet', 2, 50);
+    $v->validChamp($errors, $competences, 'competences', 2, 50);
+
+
+    if (count($errors) == 0) {
+        // INSERT into
+        
+        $repo = new ArticleRepository;
+        $register = $repo->insertRecruteur($nom,$prenom,$email,$nomEntreprise,$adresse,$telephone,$siret,$password);
+        $success = true;
+        header('Location: connexion.php');
+    }
+}
+
 $form = new Form($errors);
 
 include('inc/header.php'); ?>
@@ -32,10 +74,10 @@ include('inc/header.php'); ?>
 
     <?= $form->label('datedebut', 'Date du début'); ?>
     <?= $form->optionMonth('datedebut'); ?>
-    <?= $form->optionYear('datedebut','2020'); ?>
+    <?= $form->optionYear('datedebut', '2020'); ?>
     <?= $form->label('datefin', 'Date de fin'); ?>
     <?= $form->optionMonth('datefin'); ?>
-    <?= $form->optionYear('datefin','2020'); ?>
+    <?= $form->optionYear('datefin', '2020'); ?>
     <?= $form->errors('datedebut'); ?>
 
     <?= $form->label('intitule-poste', 'Intitulé du poste'); ?>
@@ -54,7 +96,7 @@ include('inc/header.php'); ?>
     <h3>Formations</h3>
 
     <?= $form->label('date-formation', 'Date de fin de la formation'); ?>
-    <?= $form->optionYear('date-formation','2020'); ?>
+    <?= $form->optionYear('date-formation', '2020'); ?>
     <?= $form->errors('date-formation'); ?>
 
     <?= $form->label('nom-formation', 'Intitulé de la formation'); ?>
@@ -87,8 +129,8 @@ include('inc/header.php'); ?>
     <?= $form->input('competence', 'text'); ?>
     <?= $form->errors('competence'); ?>
 
-    
-    <?= $form->submit(); ?>
+
+    <?= $form->submit('envoyer','Envoyer le CV'); ?>
 </form>
 
 <?php include('inc/footer.php');

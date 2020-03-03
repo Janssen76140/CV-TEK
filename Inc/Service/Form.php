@@ -44,7 +44,7 @@ class Form
 
     public function submit($name = 'submitted', $value = 'Envoyer')
     {
-        return '<br><input type="submit" name="' . $name . '" value="' . $value . '"/><br>';
+        return '<br><a name="' . $name . '" class="'. $name .'">'.$value.'</a><br>';
     }
 
     public function textarea($name)
