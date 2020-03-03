@@ -41,14 +41,14 @@ if (!empty($_POST['envoyer_cv'])) {
     $v->validChamp($errors, $competences, 'competences', 2, 50);
 
 
-    // if (count($errors) == 0) {
-    //     // INSERT into
+    if (count($errors) == 0) {
+        // INSERT into
         
-    //     $repo = new ArticleRepository;
-    //     $register = $repo->insertRecruteur($nom,$prenom,$email,$nomEntreprise,$adresse,$telephone,$siret,$password);
-    //     $success = true;
-    //     header('Location: connexion.php');
-    // }
+        $repo = new ArticleRepository;
+        $register = $repo->insertRecruteur($titre_cv,$accroche_cv,$email,$nomEntreprise,$adresse,$telephone,$siret,$password);
+        $success = true;
+        header('Location: connexion.php');
+    }
 }
 
 $form = new Form($errors);
