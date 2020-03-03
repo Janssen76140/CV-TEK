@@ -14,9 +14,10 @@
         <h1><a href="">CV Projekt</a></h1>
         <ul>
             <li><a href="index.php">Accueil</a></li>
-            <li><a href="#projets-section">Services</a></li>
-            <li><a href="#contact-section">Contact</a></li>
-            <li class="inscription-nav"><a href="inscription.php">Inscription</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="CreateCv.php">Creation CV</a></li>
+            <li class="inscription-nav"><a href="#">Inscription</a></li>
             <li class="connexion-nav"><a href="connexion.php">Connexion</a></li>
             <li><a href="admin/index.php">Pannel admin</a></li>
         </ul>
