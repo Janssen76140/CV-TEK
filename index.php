@@ -3,6 +3,10 @@
 $title = 'Accueil';
 include('Inc/header.php');?>
 
+<div class="image-header">
+        <p class="centered">LoremLoremLoremLoremLoremLoremLoremLorem</p>
+    </div>
+
     <section class="wrap" id="projets-section">
         <div class="text-section-projet">
             <h2>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h2>
