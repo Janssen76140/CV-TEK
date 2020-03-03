@@ -93,3 +93,5 @@ class Form
         return '<br><span class="error">' . $error . '</span><br>';
     }
 }
+
+

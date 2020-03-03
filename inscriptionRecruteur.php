@@ -47,7 +47,7 @@ $form = new Form($errors);
 
 include('Inc/header.php'); ?>
 
-<h2>Inscription recruteur</h2>
+<h4>Inscription recruteur</h4>
 
 <form action="" method="post" class="formulaire">
 
