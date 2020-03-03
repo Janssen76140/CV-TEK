@@ -7,9 +7,7 @@ $selectall = $select->select();
 $selectcount = $select->count('recruteur');
 $selectcountmember = $select->count('utilisateur');
 $selectcountcv = $select->countCv();
-if (!empty($_POST['submit'])){
-    $delete = $select->delete($selectall[0]['id']);
-}
+print_r($selectall);
 
 
 ?>
@@ -33,6 +31,7 @@ if (!empty($_POST['submit'])){
 
   <!-- Custom styles for this template-->
   <link href="admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="asset/css/style.css">
 
 </head>
 
@@ -45,7 +44,7 @@ if (!empty($_POST['submit'])){
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Main Content -->(
+      <!-- Main Content -->
       <div id="content">
 
         <!-- Topbar -->
@@ -117,22 +116,26 @@ if (!empty($_POST['submit'])){
                   </div>
               </div>
 
-
               <!-- Content Row -->
 
           <div class="row">
+              <table>
+                  <tr>
+                      <th >Nom</th>
+                      <th >Prénom</th>
+                      <th >Email</th>
+                      <th >Role</th>
+                      <th > </th>
+                  </tr>
 
             <?php foreach ($selectall as $user){
                 echo  "<br><tr>" . "<td>".$user['nom'] ."</td>" ,
                     "<td>".$user['prenom'] ."</td>",
                     "<td>".$user['email']."</td>",
                     "<td>".$user['role']."</td>",
-                "<td>
-                     <form method='post'>
-                        <input type='submit' name='submit' value='SUPPRIMER'>
-                     </form>
-                 </td>";
+                    '<td><a href="supp_user.php?id='?><?php echo $user['id']. '">SUPPRESSION</a></td>';
             }?>
+              </table>
           </div>
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
