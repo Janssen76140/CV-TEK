@@ -9,7 +9,7 @@ $title = "Connexion";
 $errors = array();
 $success = false;
 
-if (!empty($_POST['submitted'])) {
+if (!empty($_POST['envoyer'])) {
     // FAILLE XSS
     $mail   = trim(strip_tags($_POST['mail']));
     $mdp    = trim(strip_tags($_POST['password']));
@@ -32,23 +32,23 @@ $form = new Form($errors);
 
 include('Inc/header.php'); ?>
 
-<form action="" method="post" class="connexion">
+<form action="" method="post" class="formulaire">
 
-    <div class="formdiv">
       <?= $form->label('mail', 'Email'); ?>
       <?= $form->input('mail', 'text'); ?>
       <?= $form->errors('mail'); ?>
-    </div>
-    <div class="formdiv">
+
       <?= $form->label('password', 'Mot de passe'); ?>
       <?= $form->input('password', 'password'); ?>
       <?= $form->errors('password'); ?>
-    </div>
+
+      <div class="infoFormulaire">
       <a href="mdpOublie.php">Mot de passe oublié ?</a>
       <p>Pas de compte ? <a href="inscription.php"> Inscrivez-vous</a></p>
-    <div class="login">
-      <?= $form->submit(); ?>
-    </div>
+      </div>
+
+      <?= $form->submit('envoyer','Se connecter'); ?>
+
 </form>
 
 <?php include('Inc/footer.php');

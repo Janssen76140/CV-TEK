@@ -88,7 +88,7 @@ include('Inc/header.php');?>
             </p>
         </div>
         <div class="form-footer">
-            <form action="#">
+            <form action="#" class="formulaire">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Email..">
 
@@ -98,7 +98,9 @@ include('Inc/header.php');?>
                 <label for="message" id="message">Message</label>
                 <textarea id="message" name="message" placeholder="Message.."></textarea>
 
-                <input type="submit" value="Submit">
+                <div class="espace"></div>
+                <a class="autreFormulaire3" href="inscriptionRecruteur.php">Envoyer</a>
+
             </form>
         </div>
     </section>

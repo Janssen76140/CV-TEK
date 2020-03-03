@@ -9,7 +9,7 @@ $title = "Inscription";
 $errors = array();
 $success = false;
 
-if (!empty($_POST['submitted'])) {
+if (!empty($_POST['envoyer'])) {
     // FAILLE XSS
     $mail    = trim(strip_tags($_POST['mail']));
     $mdp     = trim(strip_tags($_POST['password']));
@@ -36,27 +36,24 @@ include('Inc/header.php'); ?>
 
 <h2>Inscription dépot de CV</h2>
 
-<form action="" method="post" class="inscuser">
+<form action="" method="post" class="formulaire">
 
-  <div class="formdiv">
     <?= $form->label('mail', 'Email'); ?>
     <?= $form->input('mail', 'text'); ?>
     <?= $form->errors('mail'); ?>
-  </div>
-  <div class="formdiv">
+
     <?= $form->label('password', 'Mot de passe'); ?>
     <?= $form->input('password', 'password'); ?>
     <?= $form->errors('password'); ?>
-  </div>
-  <div class="formdiv">
+
     <?= $form->label('password2', 'Confirmez votre mot de passe'); ?>
     <?= $form->input('password2', 'password'); ?>
     <?= $form->errors('password2'); ?>
-  </div>
-  <div class="candid">
-    <?= $form->submit(); ?>
-  </div>
+
+  <?= $form->submit('envoyer','S\'inscrire'); ?>
+
 </form>
-<button><a href="inscriptionRecruteur.php">Je suis recruteur</a></button>
+<div class="espace"></div>
+<a class="autreFormulaire" href="inscriptionRecruteur.php">Je suis recruteur</a>
 
 <?php include('Inc/footer.php');
