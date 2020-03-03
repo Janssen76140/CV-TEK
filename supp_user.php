@@ -7,4 +7,4 @@ $select = new Bdd();
 $id = $_GET['id'];
 $selectall = $select->select();
 $delete = $select->delete($id);
-header('admin.php');
+header('Location: admin.php');
