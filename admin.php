@@ -10,7 +10,6 @@ $selectcountcv = $select->countCv();
 if (!empty($_POST['submit'])){
     $delete = $select->delete($selectall[0]['id']);
 }
-print_r($selectall);
 
 
 ?>
@@ -46,7 +45,7 @@ print_r($selectall);
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Main Content -->
+      <!-- Main Content -->(
       <div id="content">
 
         <!-- Topbar -->
