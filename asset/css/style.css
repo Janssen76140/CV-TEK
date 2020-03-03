@@ -23,6 +23,14 @@ button:hover {
   background: darkgrey;
 }
 
+.text-section-projet span {
+    color: #89b927;
+}
+
+.video span {
+    color: #89b927;
+}
+
 body {
     font-size: 1.2em;
 }
@@ -72,7 +80,7 @@ header nav ul li a:hover {
     color: #89b927;
 }
 
- .wrap .image-header {
+.image-header {
     background-image: url("../../asset/images/slide3new.jpg");
     height: 100vh;
     background-attachment: fixed;
@@ -149,6 +157,15 @@ PROJETS
 
 .video h3 {
     font-size: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 0 0 60px 0;
+}
+
+.video p {
+    font-size: 1.1em;
     color: #fff;
     text-transform: uppercase;
     text-align: center;

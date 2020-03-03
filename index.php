@@ -3,13 +3,6 @@
 $title = 'Accueil';
 include('Inc/header.php'); ?>
 
-<<<<<<< HEAD
-=======
-    <div class="image-header">
-        <p class="centered">LoremLoremLoremLoremLoremLoremLoremLorem</p>
-    </div>
-
->>>>>>> 6adaed3dd715d3bd0550c33cd2e5a1b7a4ca9912
     <section class="wrap" id="projets-section">
         <div class="text-section-projet">
             <h2>Nous pouvons vous aider à <span>trouver un emploi</span></h2>
@@ -68,30 +61,16 @@ include('Inc/header.php'); ?>
             </div>
         </div>
     </section>
-    <section class="wrap2" id="video-section">
-        <div class="text-section-video">
+        <div class='video'>
             <h3>Par où commencer ? Apprenez à rédiger <span>un bon CV !</span> </h3>
-            <p>
-                Notre équipe vous aides dans vos démarches.
-            </p>
-        </div>
-        <div class='embed-container'>
+            <p>Notre équipe vous aides dans vos démarches.</p>
             <iframe src='https://www.youtube.com/embed/ah74HeRwXuQ' frameborder='0' allowfullscreen></iframe>
         </div>
-    </section>
+
 
     <section class="contact-section">
-<<<<<<< HEAD
             <h3>Contactez-nous</h3>
 
-=======
-        <div class="text-section-video">
-            <h3></h3>
-            <p>
-
-            </p>
-        </div>
->>>>>>> 6adaed3dd715d3bd0550c33cd2e5a1b7a4ca9912
         <div class="form-footer">
             <form action="#" class="formulaire2">
                 <label for="email">Email</label>
@@ -110,7 +89,7 @@ include('Inc/header.php'); ?>
         </div>
     </section>
 
-<?php include('Inc/footer.php');
+
 
 
 
