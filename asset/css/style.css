@@ -71,7 +71,7 @@ header nav ul li a {
 
 }
 
- .wrap .image-header {
+ .image-header {
     background-image: url("../../asset/images/slide3new.jpg");
     height: 100vh;
     background-attachment: fixed;
@@ -381,3 +381,55 @@ footer {
     padding-top: 100px;
 }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Changement de couleur titre première section
+ */
+
+ #projets-section .text-section-projet h2 span{
+    color: #89b927;
+}
+
+ #video-section .text-section-video h3 span{
+     color: #89b927;
+ }
