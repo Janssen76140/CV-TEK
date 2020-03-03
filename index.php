@@ -3,10 +3,6 @@
 $title = 'Accueil';
 include('Inc/header.php');?>
 
-<div class="image-header">
-        <p class="centered">LoremLoremLoremLoremLoremLoremLoremLorem</p>
-    </div>
-
     <section class="wrap" id="projets-section">
         <div class="text-section-projet">
             <h2>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h2>
@@ -74,15 +70,10 @@ include('Inc/header.php');?>
     </section>
 
     <section class="contact-section">
-        <div class="text-section-video">
-            <h3>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h3>
-            <p>
-                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem <br>
-                LoremLoremLoremLoremLoremLoremLorem
-            </p>
-        </div>
+            <h3>Contactez-nous</h3>
+
         <div class="form-footer">
-            <form action="#" class="formulaire">
+            <form action="#" class="formulaire2">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Email..">
 

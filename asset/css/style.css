@@ -1,25 +1,14 @@
 @import "reset.css";
 
-/*
-GENERAL
- */
+/*////////////////////////
+         GENERAL
+////////////////////////*/
 .wrap {
     margin: 0 auto;
     width: 100%;
     max-width: 1800px;
 }
 
-.wrap2 {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1400px;
-}
-
-.wrap3 {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1140px;
-}
 button {
   width: 100%;
   padding: 15px;
@@ -52,11 +41,19 @@ header nav, header nav ul {
 }
 
 header nav .inscription-nav, .connexion-nav {
-    border-radius: 20px;
+    border-radius: 10px;
     background: #89b927;
     color: #fff;
     padding: 6px;
     margin-right: 10px;
+}
+
+header nav .inscription-nav a, .connexion-nav a {
+    margin-left: 15px;
+}
+
+header nav .inscription-nav a:hover, .connexion-nav a:hover {
+    color: #1d2833;
 }
 
 header nav h1 a {
@@ -69,6 +66,10 @@ header nav ul li a {
     margin-right: 15px;
     color: white;
 
+}
+
+header nav ul li a:hover {
+    color: #89b927;
 }
 
  .wrap .image-header {
@@ -88,103 +89,7 @@ header nav ul li a {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-/* INSCRIPTION DU CANDIDAT */
-.inscuser {
-  margin: 0 auto;
-  width: 50%;
-  max-width: 400px;
-  background-color: white;
-  font-size: 0.8em;
-  color: #89b927;
-}
-.inscuser .formdiv {
-  margin-bottom: 20px;
-}
-.inscuser [type=text], [type=password] {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
-}
-.candid [type=submit] {
-  text-align: center;
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
-  color: #89b927;
-  font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-.candid [type=submit]:hover {
-  background-color: darkgrey;
-}
-/* INSCRIPTION DU RECRUTEUR */
-.inscrecruteur {
-  margin: 0 auto;
-  width: 50%;
-  max-width: 400px;
-  background-color: white;
-  margin-top: 120px;
-  font-size: 0.8em;
-  color: #89b927;
-}
-.inscrecruteur .formdiv {
-  margin-bottom: 20px;
-}
-.inscrecruteur [type=text], [type=password], [type=number] {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
-}
-.recrut [type=submit] {
-  text-align: center;
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background-color: #1d2833;
-  color: #89b927;
-  font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-.recrut [type=submit]:hover {
-  background-color: darkgrey;
-}
-/* CONNEXION */
-.connexion {
-  margin: 0 auto;
-  width: 50%;
-  max-width: 400px;
-  background-color: white;
-  font-size: 0.8em;
-  color: #89b927;
-}
-.connexion .formdiv {
-  margin-bottom: 20px;
-}
-.connexion [type=text], [type=password] {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
-}
-.login [type=submit] {
-  text-align: center;
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background: #1d2833;
-  color: #89b927;
-  font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-.login [type=submit]:hover {
-  background-color: lightgrey;
-}
+
 /*********
 PROJETS
  *********/
@@ -251,30 +156,14 @@ PROJETS
     padding: 0 0 60px 0;
 }
 
-/*
-CONTACT SECTION
- */
-
-.contact-section h2 {
-    font-size: 45px;
-    font-weight: bold;
-}
 
 
-/*
-FOOTER
- */
-footer ul {
-    display: flex;
-    justify-content: center;
-    background-color: #89b927;
-}
+/*////////////////////////
+        FORMULAIRE
+////////////////////////*/
 
-footer ul li a {
-    color: #ffffff;
-    margin: 5px;
 
-}
+
 
 .formulaire {
     padding-top: 80px;
@@ -370,11 +259,95 @@ footer ul li a {
     padding: 20px 0;
 }
 
+.contact-section h3 {
+    font-size: 2em;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 50px 0 20px 0;
+}
+
+.formulaire2 {
+    padding-top: 60px;
+    width: 100%;
+
+}
+
+.formulaire2 input[type=text], .formulaire2 input[type=email] {
+    width: 40%;
+    height: 40px;
+    border: 1px solid #1d2833;
+    margin-left: 30%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.formulaire2 textarea {
+    width: 40%;
+    height: 200px;
+    border: 1px solid #1d2833;
+    margin-left: 30%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    resize:none;
+    border-radius: 5px;
+}
+
+.formulaire2 label {
+    margin-left: 30%;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.formulaire2 .envoyer {
+    margin-left: 45%;
+    border: 1px solid #1d2833;
+    background-color: #1d2833;
+    padding: 10px 20px;
+    color: white;
+}
+
+.formulaire2 .envoyer:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #1d2833;
+    border: 1px solid #1d2833;
+}
+
+
+
+
+/*////////////////////////
+         FOOTER
+////////////////////////*/
+
+
+
 footer {
     padding-top: 100px;
 }
+
+ footer ul {
+    display: flex;
+    justify-content: center;
+    background-color: #89b927;
+}
+
+footer ul li a {
+    color: #ffffff;
+    margin: 5px;
+
+}
   
-/*ADMIN*/
+/*////////////////////////
+         ADMIN
+////////////////////////*/
+
+
+
 table {
     width: 80%;
     text-align: center;
