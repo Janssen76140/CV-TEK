@@ -66,15 +66,9 @@ include('Inc/header.php');?>
             </div>
         </div>
     </section>
-    <section class="wrap2" id="video-section">
-        <div class="text-section-video">
-            <h3>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h3>
-            <p>
-                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem <br>
-                LoremLoremLoremLoremLoremLoremLorem
-            </p>
-        </div>
-        <div class='embed-container'>
+
+        <div class='video'>
+        <h3>On vous accompagne pour la création de votre CV</h3>
             <iframe src='https://www.youtube.com/embed/ah74HeRwXuQ' frameborder='0' allowfullscreen></iframe>
         </div>
     </section>
