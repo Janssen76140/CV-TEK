@@ -20,7 +20,6 @@ GENERAL
     width: 100%;
     max-width: 1140px;
 }
-
 button {
   width: 100%;
   padding: 15px;
@@ -31,7 +30,6 @@ button {
   margin-top: 30px;
   margin-bottom: 40px;
 }
-
 button:hover {
   background: darkgrey;
 }
@@ -53,19 +51,12 @@ header nav, header nav ul {
     align-items: center;
 }
 
-.inscription-nav, .connexion-nav {
-    border-radius: 10px;
+header nav .inscription-nav, .connexion-nav {
+    border-radius: 20px;
     background: #89b927;
     color: #fff;
     padding: 6px;
     margin-right: 10px;
-}
-.inscription-nav a, .connexion-nav a {
-    margin-left: 15px;
-}
-
-.inscription-nav a:hover, .connexion-nav a:hover {
-    color: #1d2833;
 }
 
 header nav h1 a {
@@ -77,13 +68,10 @@ header nav ul li a {
     flex-direction: row;
     margin-right: 15px;
     color: white;
+
 }
 
-header nav ul li a:hover {
-    color: #89b927;
-}
-
-.image-header {
+ .wrap .image-header {
     background-image: url("../../asset/images/slide3new.jpg");
     height: 100vh;
     background-attachment: fixed;
@@ -93,7 +81,110 @@ header nav ul li a:hover {
 
 }
 
-
+.centered {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* INSCRIPTION DU CANDIDAT */
+.inscuser {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 400px;
+  background-color: white;
+  font-size: 0.8em;
+  color: #89b927;
+}
+.inscuser .formdiv {
+  margin-bottom: 20px;
+}
+.inscuser [type=text], [type=password] {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #1d2833;
+}
+.candid [type=submit] {
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #1d2833;
+  color: #89b927;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.candid [type=submit]:hover {
+  background-color: darkgrey;
+}
+/* INSCRIPTION DU RECRUTEUR */
+.inscrecruteur {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 400px;
+  background-color: white;
+  margin-top: 120px;
+  font-size: 0.8em;
+  color: #89b927;
+}
+.inscrecruteur .formdiv {
+  margin-bottom: 20px;
+}
+.inscrecruteur [type=text], [type=password], [type=number] {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #1d2833;
+}
+.recrut [type=submit] {
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #1d2833;
+  color: #89b927;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.recrut [type=submit]:hover {
+  background-color: darkgrey;
+}
+/* CONNEXION */
+.connexion {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 400px;
+  background-color: white;
+  font-size: 0.8em;
+  color: #89b927;
+}
+.connexion .formdiv {
+  margin-bottom: 20px;
+}
+.connexion [type=text], [type=password] {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #1d2833;
+}
+.login [type=submit] {
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #1d2833;
+  color: #89b927;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.login [type=submit]:hover {
+  background-color: lightgrey;
+}
 /*********
 PROJETS
  *********/
@@ -198,7 +289,6 @@ footer ul li a {
     margin-left: 40%;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 10px;
 }
 
 .formulaire textarea {
@@ -207,8 +297,7 @@ footer ul li a {
     border: 1px solid #1d2833;
     margin-left: 40%;
     margin-top: 20px;
-    resize:none;
-    border-radius: 10px;
+    resize:none
 }
 
 .formulaire label {
@@ -226,7 +315,6 @@ footer ul li a {
     background-color: #1d2833;
     padding: 10px 20px;
     color: white;
-    border-radius: 10px;
 }
 
 .formulaire .envoyer:hover {
@@ -242,7 +330,6 @@ footer ul li a {
     color: white;
     margin-left: 43%;
     border: 1px solid #89b927;
-    border-radius: 10px;
 }
 
 .autreFormulaire:hover {
@@ -257,7 +344,6 @@ footer ul li a {
     color: white;
     margin-left: 40%;
     border: 1px solid #89b927;
-    border-radius: 10px;
 }
 
 .autreFormulaire2:hover {
@@ -272,7 +358,6 @@ footer ul li a {
     color: white;
     margin-left: 46%;
     border: 1px solid #89b927;
-    border-radius: 10px;
 }
 
 .autreFormulaire3:hover {
@@ -287,4 +372,23 @@ footer ul li a {
 
 footer {
     padding-top: 100px;
+}
+  
+/*ADMIN*/
+table {
+    width: 80%;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 10%;
+}
+table th {
+    font-weight: bold;
+    padding: 10px 0;
+    border: 1px solid grey;
+    border-bottom: 3px solid grey;
+}
+table td{
+    width: 300px;
+    border: 1px grey solid;
+    padding: 20px 0;
 }
