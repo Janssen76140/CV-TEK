@@ -7,6 +7,10 @@ $selectall = $select->select();
 $selectcount = $select->count('recruteur');
 $selectcountmember = $select->count('utilisateur');
 $selectcountcv = $select->countCv();
+if (!empty($_POST['submit'])){
+    $delete = $select->delete($selectall[0]['id']);
+}
+
 
 ?>
 
@@ -41,7 +45,7 @@ $selectcountcv = $select->countCv();
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Main Content -->
+      <!-- Main Content -->(
       <div id="content">
 
         <!-- Topbar -->
@@ -123,11 +127,6 @@ $selectcountcv = $select->countCv();
                     "<td>".$user['prenom'] ."</td>",
                     "<td>".$user['email']."</td>",
                     "<td>".$user['role']."</td>",
-                "<td>
-                     <form method='post'>
-                        <input type='submit' name='submitted' value='MODIFIER'>
-                     </form>
-                 </td>",
                 "<td>
                      <form method='post'>
                         <input type='submit' name='submit' value='SUPPRIMER'>
