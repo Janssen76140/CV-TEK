@@ -381,3 +381,21 @@ footer {
     padding-top: 100px;
 }
   
+/*ADMIN*/
+table {
+    width: 80%;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 10%;
+}
+table th {
+    font-weight: bold;
+    padding: 10px 0;
+    border: 1px solid grey;
+    border-bottom: 3px solid grey;
+}
+table td{
+    width: 300px;
+    border: 1px grey solid;
+    padding: 20px 0;
+}
