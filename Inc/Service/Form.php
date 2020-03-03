@@ -37,14 +37,14 @@ class Form
         }
     }
 
-    public function input($name, $type = 'text')
+    public function input($name, $type)
     {
         return '<br><input type="' . $type . '" name="' . $name . '" id="' . $name . '" value="' . $this->getValue($name) . '" />';
     }
 
-    public function submit($name = 'submitted', $value = 'Envoyer')
+    public function submit($name, $value)
     {
-        return '<br><a name="' . $name . '" class="'. $name .'">'.$value.'</a><br>';
+        return '<br><input type="submit" name="' . $name . '" class="'. $name .'"'.$value.'/><br>';
     }
 
     public function textarea($name)
@@ -86,15 +86,6 @@ class Form
         return $years;
     }
 
-    public function startSelect($name)
-    {
-        return '<br><select name="' . $name . '" id ="' . $name . '">';
-    }
-
-    public function stopSelect()
-    {
-        return '</select><br>';
-    }
 
     public function errors($name)
     {
