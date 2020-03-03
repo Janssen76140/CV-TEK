@@ -1,84 +1,87 @@
 <?php
 
 $title = 'Accueil';
-include('Inc/header.php');?>
+include('Inc/header.php'); ?>
 
-<div class="image-header">
+    <div class="image-header">
         <p class="centered">LoremLoremLoremLoremLoremLoremLoremLorem</p>
     </div>
 
     <section class="wrap" id="projets-section">
         <div class="text-section-projet">
-            <h2>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h2>
+            <h2>Nous pouvons vous aider à <span>trouver un emploi</span></h2>
             <p>
-                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem <br>
-                LoremLoremLoremLoremLoremLoremLorem
+                Choisissez votre secteur d'activités en un seul clique !
             </p>
         </div>
         <div class="row">
             <div class="column">
                 <figure>
                     <a href=""><img src="asset/images/icon1.png" alt=""></a>
-                    <p>Lorem</p>
+                    <p>Comptabilité / Finance</p>
                 </figure>
             </div>
             <div class="column">
                 <figure>
                     <a href=""><img src="asset/images/icon2.png" alt=""></a>
-                    <p>Lorem</p>
+                    <p>Automobile</p>
                 </figure>
             </div>
             <div class="column">
                 <figure>
                     <a href=""> <img src="asset/images/icon3.png" alt=""></a>
-                    <p>Lorem</p>
+                    <p>Travaux publics</p>
                 </figure>
             </div>
             <div class="column">
                 <figure>
                     <a href=""><img src="asset/images/icon4.png" alt=""></a>
-                    <p>Lorem</p>
+                    <p>Education</p>
                 </figure>
             </div>
             <div class="column">
                 <figure>
                     <a href=""><img src="asset/images/icon5.png" alt=""></a>
-                    <p>Lorem</p>
+                    <p>Santé</p>
                 </figure>
             </div>
             <div class="column">
                 <figure>
                     <a href=""> <img src="asset/images/icon6.png" alt=""></a>
-                    <p>Lorem</p>
+                    <p>Restauration</p>
                 </figure>
             </div>
             <div class="column">
                 <figure>
                     <a href=""> <img src="asset/images/icon7.png" alt=""></a>
-                    <p>Lorem</p>
+                    <p>Transport / Logistique</p>
                 </figure>
             </div>
             <div class="column">
                 <figure>
                     <a href=""><img src="asset/images/icon8.png" alt=""></a>
-                    <p>Lorem</p>
+                    <p>Numérique / Digital</p>
                 </figure>
             </div>
         </div>
     </section>
-
-        <div class='video'>
-        <h3>On vous accompagne pour la création de votre CV</h3>
+    <section class="wrap2" id="video-section">
+        <div class="text-section-video">
+            <h3>Par où commencer ? Apprenez à rédiger <span>un bon CV !</span> </h3>
+            <p>
+                Notre équipe vous aides dans vos démarches.
+            </p>
+        </div>
+        <div class='embed-container'>
             <iframe src='https://www.youtube.com/embed/ah74HeRwXuQ' frameborder='0' allowfullscreen></iframe>
         </div>
     </section>
 
     <section class="contact-section">
         <div class="text-section-video">
-            <h3>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h3>
+            <h3></h3>
             <p>
-                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem <br>
-                LoremLoremLoremLoremLoremLoremLorem
+
             </p>
         </div>
         <div class="form-footer">
