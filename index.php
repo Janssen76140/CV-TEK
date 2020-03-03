@@ -90,6 +90,29 @@ include('inc/function.php');
         </div>
     </section>
 
+    <section class="contact-section">
+        <div class="text-section-video">
+            <h3>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h3>
+            <p>
+                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem <br>
+                LoremLoremLoremLoremLoremLoremLorem
+            </p>
+        </div>
+        <div class="form-footer">
+            <form action="#">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email..">
+
+                <label for="object">Objet</label>
+                <input type="text" id="object" name="object" placeholder="Objet..">
+
+                <label for="message" id="message">Message</label>
+                <textarea id="message" name="message" placeholder="Message.."></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
 
 <?php include('inc/footer.php'); ?>
 
