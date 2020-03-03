@@ -3,6 +3,8 @@
 $title = 'Accueil';
 include('Inc/header.php'); ?>
 
+    <div class="image-header"></div>
+
     <section class="wrap" id="projets-section">
         <div class="text-section-projet">
             <h2>Nous pouvons vous aider à <span>trouver un emploi</span></h2>
