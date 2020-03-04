@@ -56,11 +56,13 @@ include('Inc/header.php'); ?>
     <?= $form->input('password2', 'password'); ?>
     <?= $form->errors('password2'); ?>
 
+    <a class="cgubox" href="cgu.php">Conditions générales d’utilisation</a>
+          <input type="checkbox" name="cgu" id="cgu" value="yes" <?php  if(!empty($_GET['condition'])) {if($_GET['condition'] == 'yes') {echo 'checked';}} ?>>
+          <p class="error"><?php if(!empty($errors['cgu'])) { echo $errors['cgu']; } ?></p>
+
   <?= $form->submit('envoyer','S\'inscrire'); ?>
 
-  <a class="cgubox" href="cgu.php">Conditions générales d’utilisation</a>
-        <input type="checkbox" name="cgu" id="cgu" value="yes" <?php  if(!empty($_GET['condition'])) {if($_GET['condition'] == 'yes') {echo 'checked';}} ?>>
-        <p class="error"><?php if(!empty($errors['cgu'])) { echo $errors['cgu']; } ?></p>
+
 </form>
 <div class="espace"></div>
 <a class="autreFormulaire" href="inscriptionRecruteur.php">Je suis recruteur</a>
