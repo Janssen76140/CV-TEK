@@ -11,6 +11,7 @@
                 echo 'nom du site';
             } ?> </title>
     <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/compte.css">
 
 </head>
 
@@ -33,18 +34,21 @@
                 <?php } elseif ($_SESSION['role'] == "utilisateur") { ?>
 
                     <li><a href="CreateCv.php">Creation CV</a></li>
+                    <li><a href="compte.php">Mon compte</a></li>
                     <li><a href="deconnexion.php">Deconnexion</a></li>
 
                 <?php } elseif ($_SESSION['role'] == "admin") { ?>
 
                     <li><a href="CreateCv.php">Creation CV</a></li>
-                    <li><a href="index.php">Recherche de CV</a></li>
+                    <li><a href="recherche.php">Recherche de CV</a></li>
                     <li><a href="admin/index.php">Pannel admin</a></li>
+                    <li><a href="compte.php">Mon compte</a></li>
                     <li><a href="deconnexion.php">Deconnexion</a></li>
 
                 <?php } elseif ($_SESSION['role'] == "recruteur") { ?>
 
-                    <li><a href="#contact">Recherche de CV</a></li>
+                    <li><a href="recherche.php">Recherche de CV</a></li>
+                    <li><a href="compte.php">Mon compte</a></li>
                     <li><a href="deconnexion.php">Deconnexion</a></li>
                 <?php } ?>
 

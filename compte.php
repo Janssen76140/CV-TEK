@@ -1,6 +1,7 @@
 <?php
+session_start();
 spl_autoload_register();
-include('functions/function.php');
+include('inc/function.php');
 
 use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;
@@ -30,9 +31,9 @@ if (!empty($_POST['envoyer'])) {
 
     if (count($errors) == 0 && $userId) {
         // INSERT into
-        
+
         $repo = new ArticleRepository;
-        $register = $repo->insertInfo($userId, $nom,$prenom,$adresse,$telephone);
+        $register = $repo->insertInfo($userId, $nom, $prenom, $adresse, $telephone);
         $success = true;
         header('Location: connexion.php');
     }
@@ -41,39 +42,44 @@ if (!empty($_POST['envoyer'])) {
 $form = new Form($errors);
 
 include('Inc/header.php'); ?>
+<div class="espace2"></div>
+<h3 class="titrecompte">Mon compte</h3>
+<div class="compte">
+    
+    <h4>Mes informations</h4>
 
-<h3>Mon compte</h3>
-<span>Mes informations</span> <?php
+    <?php
+    $repository = new ArticleRepository;
+    if ($userId != false) {
+        $info = $repository->selectInfo($userId);
+        echo '<p>• ' . $info['email'] . '</p>';
+    } ?>
+    <p><a href="mdpOublie.php">Changer votre mot de passe</a></p>
+    <p class="messageRouge">* Si vous voulez que votre CV soit retrouvé veuillez rensigner les informations suivantes</p>
+</div>
+<div class="compte2">
+    <h4>Compléter mes information</h4>
 
+    <form action="" method="post" class="formulaireCompte">
 
-$repository = new ArticleRepository;
-if ($userId != false) {
-    $info = $repository->selectInfo($userId); 
-    echo '<p>' . $info['email'] . '</p>';
-} ?>
-<a href="mdpOublie.php">Changer votre mot de passe</a>
+        <?= $form->label('nom', 'Nom'); ?>
+        <?= $form->input('nom', 'text'); ?>
+        <?= $form->errors('nom'); ?>
 
-<span>Compléter mes information</span>
+        <?= $form->label('prenom', 'Prénom'); ?>
+        <?= $form->input('prenom', 'text'); ?>
+        <?= $form->errors('prenom'); ?>
 
-<form action="" method="post">
+        <?= $form->label('adresse', 'Adresse'); ?>
+        <?= $form->input('adresse', 'text'); ?>
+        <?= $form->errors('adresse'); ?>
 
-    <?= $form->label('nom', 'Nom'); ?>
-    <?= $form->input('nom', 'text'); ?>
-    <?= $form->errors('nom'); ?>
+        <?= $form->label('telephone', 'Telephone'); ?>
+        <?= $form->input('telephone', 'number'); ?>
+        <?= $form->errors('telephone'); ?>
 
-    <?= $form->label('prenom', 'Prénom'); ?>
-    <?= $form->input('prenom', 'text'); ?>
-    <?= $form->errors('prenom'); ?>
-
-    <?= $form->label('adresse', 'Adresse'); ?>
-    <?= $form->input('adresse', 'text'); ?>
-    <?= $form->errors('adresse'); ?>
-
-    <?= $form->label('telephone', 'Telephone'); ?>
-    <?= $form->input('telephone', 'number'); ?>
-    <?= $form->errors('telephone'); ?>
-
-    <?= $form->submit('envoyer','Modifier'); ?>
-</form>
+        <?= $form->submit('envoyer', 'Modifier'); ?>
+    </form>
+</div>
 
 <?php include('Inc/footer.php');

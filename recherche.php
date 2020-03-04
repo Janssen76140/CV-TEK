@@ -1,10 +1,11 @@
 <?php
+session_start();
 spl_autoload_register();
 
 use Inc\Service\SearchBar;
 use Inc\Utils;
 
-
+include('inc/function.php');
 $search = new SearchBar();
 $getword = $search->getWord();
 $recherches = $search->findWord($getword);
