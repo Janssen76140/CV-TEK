@@ -48,7 +48,7 @@ header nav, header nav ul {
     align-items: center;
 }
 
-header nav .inscription-nav, .connexion-nav {
+header nav .inscription-nav, .connexion-nav, .deconnexion-nav {
     border-radius: 10px;
     background: #89b927;
     color: #fff;
@@ -56,11 +56,11 @@ header nav .inscription-nav, .connexion-nav {
     margin-right: 10px;
 }
 
-header nav .inscription-nav a, .connexion-nav a {
+header nav .inscription-nav a, .connexion-nav a, .deconnexion-nav a {
     margin-left: 15px;
 }
 
-header nav .inscription-nav a:hover, .connexion-nav a:hover {
+header nav .inscription-nav a:hover, .connexion-nav a:hover, .deconnexion-nav a:hover {
     color: #1d2833;
 }
 
