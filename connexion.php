@@ -31,7 +31,7 @@ if (!empty($_POST['envoyer'])) {
 $form = new Form($errors);
 
 include('Inc/header.php'); ?>
-
+<h4>Connexion</h4>
 <form action="" method="post" class="formulaire">
 
       <?= $form->label('mail', 'Email'); ?>

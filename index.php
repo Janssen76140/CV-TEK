@@ -91,6 +91,7 @@ include('Inc/header.php'); ?>
         </div>
     </section>
 
+<?php include('Inc/footer.php'); ?>
 
 
 

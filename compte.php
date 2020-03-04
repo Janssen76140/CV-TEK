@@ -12,7 +12,7 @@ $success = false;
 $utils = new Utils;
 $userId = $utils->getCurrentUserId();
 
-if (!empty($_POST['submitted'])) {
+if (!empty($_POST['envoyer'])) {
     // FAILLE XSS
     $nom           = trim(strip_tags($_POST['nom']));
     $prenom        = trim(strip_tags($_POST['prenom']));
@@ -72,7 +72,7 @@ if ($userId != false) {
     <?= $form->input('telephone', 'number'); ?>
     <?= $form->errors('telephone'); ?>
 
-    <?= $form->submit(); ?>
+    <?= $form->submit('envoyer','Modifier'); ?>
 </form>
 
 <?php include('Inc/footer.php');

@@ -44,7 +44,7 @@ class Form
 
     public function submit($name, $value)
     {
-        return '<br><input type="submit" name="' . $name . '" class="'. $name .'"'.$value.'/><br>';
+        return '<br><input type="submit" name="' . $name . '" class="'. $name .'" value="'.$value.'"/><br>';
     }
 
     public function textarea($name)
@@ -93,3 +93,5 @@ class Form
         return '<br><span class="error">' . $error . '</span><br>';
     }
 }
+
+

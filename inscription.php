@@ -34,7 +34,7 @@ $form = new Form($errors);
 
 include('Inc/header.php'); ?>
 
-<h2>Inscription dépot de CV</h2>
+<h4>Inscription dépot de CV</h4>
 
 <form action="" method="post" class="formulaire">
 

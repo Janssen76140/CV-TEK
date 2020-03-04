@@ -65,7 +65,7 @@ $form = new Form($errors);
 include('inc/header.php'); ?>
 
 <h2>Edition de CV</h2>
-
+<div id="titre_cv"><p>{{ message }}</p><input v-model="message"></div>
 <form action="#" method="post">
 
     <h3>Titres et accroche</h3>
@@ -143,5 +143,6 @@ include('inc/header.php'); ?>
 
     <?= $form->submit('envoyer_cv','Envoyer le CV'); ?>
 </form>
+<div class="ligne"></div>
 
 <?php include('inc/footer.php');
