@@ -1,6 +1,7 @@
 <?php
+session_start();
 spl_autoload_register();
-include('functions/function.php');
+include('inc/function.php');
 use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;
 use \Inc\Service\Validation;
@@ -21,11 +22,13 @@ if (!empty($_POST['envoyer'])) {
 
     if (count($errors) == 0) {
         // INSERT into
-        $repo = new ArticleRepository;
+        $repo = new ArticleRepository();
         $user = $repo->findByEmail($mail);
-
+        $_SESSION['mail'] = $user->getMail();
+        $_SESSION['role'] = $user->getRole();
+        $_SESSION['id'] = $user->getId();
         $success = true;
-        header('Location: compte.php');
+        header('Location: index.php');
     }
 }
 

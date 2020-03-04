@@ -1,6 +1,7 @@
 <?php
+session_start();
 $title = 'Accueil';
-include('functions/function.php');
+include('inc/function.php');
 include('Inc/header.php'); ?>
 
 
