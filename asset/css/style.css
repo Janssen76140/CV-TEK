@@ -359,7 +359,7 @@ h4 {
 
 
 footer {
-    padding-top: 100px;
+
 }
 
  footer ul {
@@ -556,8 +556,9 @@ table td{
     width: 20%;
     margin-left: 40%;
     margin-top: 20px;
-    background-color: #1d2833;
-    color: #fff;
+    background-color: white;
+    color: #1d2833;
+    font-size: 1em;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     border: 1px solid #1d2833;
@@ -566,7 +567,7 @@ table td{
 }
 
 .formCv input[type=submit]:hover {
-    background-color: #fff;
+    background-color: rgb(146, 146, 146);
     color: #1d2833;
     border: 1px solid #1d2833;
     transition: 0.8s;

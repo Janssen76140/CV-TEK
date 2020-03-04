@@ -109,7 +109,6 @@ class Utils
 
     function getCurrentUserId()
     {
-        session_start();
         if (!empty($_SESSION['login']['id']) && is_numeric($_SESSION['login']['id'])) {
             return $_SESSION['login']['id'];
         } 
