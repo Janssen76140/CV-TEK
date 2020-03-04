@@ -357,7 +357,9 @@ h4 {
          FOOTER
 ////////////////////////*/
 
-
+footer {
+    padding-top: 70px;
+}
 
  footer ul {
     display: flex;
@@ -613,14 +615,15 @@ table td{
 
 
 .compte {
-    width: 50%;
+    width: 46%;
     float: left;
     background-color: #1d2833;
     padding-bottom: 255px;
+    margin-left: 4%;
 }
 
 .compte2 {
-    width: 49.99999999999%;
+    width: 46%;
     display: inline-block;
     background-color: #89b927;
     padding-bottom: 40px;
