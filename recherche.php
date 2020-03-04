@@ -4,11 +4,6 @@ spl_autoload_register();
 use Inc\Service\SearchBar;
 use Inc\Utils;
 
-$verif = new Utils();
-$verifadmin = $verif->isAdmin();
-if (!isAdmin()){
-    header("Location: 404.php");
-}
 
 $search = new SearchBar();
 $getword = $search->getWord();
@@ -16,14 +11,23 @@ $recherches = $search->findWord($getword);
 
 
 
-include('Inc/header.php'); ?>
-
+include('Inc/header.php')?>
+<section id="cvsearch_top">
+<h1 class="cvsearch_title">Trouvez des profils :</h1>
+    <form class="cvsearch_form" action="" method = "get">
+        <input type="search" name="search" placeholder="Rechercher un cv ..."/>
+        <input type="submit" name="submit" value="Rechercher"/>
+    </form>
+</section>
+<section id="cvsearch_bottom">
 <?php
 foreach ($recherches as $recherche) {
 echo "<div>" . $recherche['nom'], "<br>" . $recherche['prenom'] . "</div>";
 }
+?>
+</section>
 
-
+<?php
 include('Inc/footer.php');
 
 
