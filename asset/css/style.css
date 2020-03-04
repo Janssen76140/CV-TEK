@@ -188,6 +188,10 @@ PROJETS
 
 }
 
+.formulaire span {
+    margin-left: 40%;
+}
+
 .formulaire input[type=text], .formulaire input[type=email], .formulaire input[type=password], .formulaire input[type=number] {
     width: 20%;
     height: 40px;
@@ -342,7 +346,7 @@ h4 {
     font-size: 1.4em;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 
