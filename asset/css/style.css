@@ -443,3 +443,92 @@ table td{
     top: 100px;
     transform: translate(700px,0);
 }
+
+.plus {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2em;
+    background-color: #1d2833;
+    padding: 3px 5px;
+    border-radius: 50%;
+    margin-left: 5%;
+    color: #fff;
+}
+
+.moin {
+    cursor: pointer;
+    font-size: 2em;
+    display: inline-block;
+    margin-left: 10%;
+    background-color: #1d2833;
+    padding: 3px 5px;
+    border-radius: 50%;
+    color: #fff;
+
+}
+
+.ajouter1 {
+    display: none;
+}
+
+.ajouter2 {
+    display: none;
+}
+
+.formCv {
+    width: 50%;
+    padding-top: 50px;
+}
+
+.formCv h3 {
+    text-align: center;
+    font-size: 1.6em;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding: 40px 0;
+}
+
+.formCv input[type=text] {
+    width: 30%;
+    height: 30px;
+    margin-left: 35%;
+    margin-top: 20px;
+}
+
+.formCv textarea {
+    width: 30%;
+    height: 80px;
+    margin-left: 35%;
+    resize: none;
+    margin-top: 20px;
+
+}
+
+.formCv label {
+    margin-left: 35%;
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.formCv input[type=submit] {
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 20px;
+    background-color: #1d2833;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    border: 1px solid #1d2833;
+    padding: 15px 0;
+    transition: 0.8s;
+}
+
+.formCv input[type=submit]:hover {
+    background-color: #fff;
+    color: #1d2833;
+    border: 1px solid #1d2833;
+    transition: 0.8s;
+
+}
