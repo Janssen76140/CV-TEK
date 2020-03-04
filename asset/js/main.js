@@ -49,3 +49,11 @@ function enlever() {
     $('.ajouter1').css('display', 'none')
 }
 
+function ajouter1() {
+    $('.ajouter2').css('display', 'block')
+}
+
+function enlever1() {
+    $('.ajouter2').css('display', 'none')
+}
+
