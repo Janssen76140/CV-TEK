@@ -16,8 +16,10 @@ if (!empty($_POST['envoyer_cv'])) {
     // FAILLE XSS
     $titre_cv                   = trim(strip_tags($_POST['titre_cv']));
     $accroche_cv                = trim(strip_tags($_POST['accroche_cv']));
-    $datedebut                  = trim(strip_tags($_POST['datedebut']));
-    $datefin                    = trim(strip_tags($_POST['datefin']));
+    $datedebut_mois             = trim(strip_tags($_POST['datedebut_mois']));
+    $datedebut_annee            = trim(strip_tags($_POST['datedebut_annee']));
+    $datefin_mois               = trim(strip_tags($_POST['datefin_mois']));
+    $datefin_annee              = trim(strip_tags($_POST['datefin_annee']));
     $intitule_poste             = trim(strip_tags($_POST['intitule_poste']));
     $nom_entreprise             = trim(strip_tags($_POST['nom_entreprise']));
     $description_experience     = trim(strip_tags($_POST['description_experience']));
@@ -33,15 +35,15 @@ if (!empty($_POST['envoyer_cv'])) {
     $v = new Validation();
     $v->validChamp($errors, $titre_cv, 'titre_cv', 2, 50);
     $v->validChamp($errors, $accroche_cv, 'accroche_cv', 2, 1000);
-    // $v->validChamp($errors, $intitule_poste, 'intitule_poste', 2, 50);
-    // $v->validChamp($errors, $nom_entreprise, 'nom_entreprise', 2, 50);
-    // $v->validChamp($errors, $description_experience, 'description_experience', 2, 1000);
-    // $v->validChamp($errors, $nom_formation, 'nom_formation', 2, 50);
-    // $v->validChamp($errors, $nom_ecole, 'nom_ecole', 2, 50);
-    // $v->validChamp($errors, $ville_ecole, 'ville_ecole', 2, 50);
-    // $v->validChamp($errors, $description_formation, 'description_formation', 2, 1000);
-    // $v->validChamp($errors, $centre_interet, 'centre_interet', 2, 50);
-    // $v->validChamp($errors, $competences, 'competences', 2, 50);
+    $v->validChamp($errors, $intitule_poste, 'intitule_poste', 2, 50);
+    $v->validChamp($errors, $nom_entreprise, 'nom_entreprise', 2, 50);
+    $v->validChamp($errors, $description_experience, 'description_experience', 2, 1000);
+    $v->validChamp($errors, $nom_formation, 'nom_formation', 2, 50);
+    $v->validChamp($errors, $nom_ecole, 'nom_ecole', 2, 50);
+    $v->validChamp($errors, $ville_ecole, 'ville_ecole', 2, 50);
+    $v->validChamp($errors, $description_formation, 'description_formation', 2, 1000);
+    $v->validChamp($errors, $centre_interet, 'centre_interet', 2, 50);
+    $v->validChamp($errors, $competences, 'competences', 2, 50);
 
 
     if (count($errors) == 0) {
@@ -49,6 +51,10 @@ if (!empty($_POST['envoyer_cv'])) {
         
         $repo = new ArticleRepository;
         $register = $repo->insertTitreCv($userId, $titre_cv,$accroche_cv);
+        $register = $repo->insertExperience($userId,$datedebut_mois, $datedebut_annee, $datefin_mois, $datefin_annee, $intitule_poste,$nom_entreprise, $description_experience);
+        $register = $repo->insertFormation($userId, $date_formation, $nom_formation, $nom_ecole, $ville_ecole, $description_formation);
+        $register = $repo->insertInteret($userId, $centre_interet);
+        $register = $repo->insertCompetences($userId, $competences);
         $success = true;
         //header('Location: CreateCv.php');
     }
@@ -75,12 +81,14 @@ include('inc/header.php'); ?>
 
     <h3>Expériences</h3>
 
-    <?= $form->label('datedebut', 'Date du début'); ?>
-    <?= $form->optionMonth('datedebut'); ?>
-    <?= $form->optionYear('datedebut', '2020'); ?>
-    <?= $form->label('datefin', 'Date de fin'); ?>
-    <?= $form->optionMonth('datefin'); ?>
-    <?= $form->optionYear('datefin', '2020'); ?>
+    <?= $form->label('datedebut_mois', 'Mois'); ?>
+    <?= $form->optionMonth('datedebut_mois'); ?>
+    <?= $form->label('datedebut_annee', 'Année'); ?>
+    <?= $form->optionYear('datedebut_annee', '2020'); ?>
+    <?= $form->label('datefin_mois', 'Mois'); ?>
+    <?= $form->optionMonth('datefin_mois'); ?>
+    <?= $form->label('datefin_annee', 'Année'); ?>
+    <?= $form->optionYear('datefin_annee', '2020'); ?>
     <?= $form->errors('datedebut'); ?>
 
     <?= $form->label('intitule_poste', 'Intitulé du poste'); ?>
