@@ -1,6 +1,6 @@
 <?php
 spl_autoload_register();
-
+include('functions/function.php');
 use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;
 use \Inc\Service\Validation;
@@ -37,7 +37,7 @@ if (!empty($_POST['submitted'])) {
 include('Inc/header.php'); ?>
 
 
-<h2>Changer de mot de passe</h3>
+<h2>Changer de mot de passe</h2>
 
 <form action="" method="post" class="forgetpass">
 

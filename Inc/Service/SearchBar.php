@@ -10,10 +10,10 @@ class SearchBar
 
     function getWord ()
     {
-        $terme = '';
+        $terme = ' ';
         if (isset($_GET["submit"]) AND $_GET["submit"] == "Rechercher") {
-            $_GET["terme"] = htmlspecialchars($_GET["terme"]);
-            $terme = $_GET["terme"];
+            $_GET["search"] = htmlspecialchars($_GET["search"]);
+            $terme = $_GET["search"];
             $terme = trim($terme);
             $terme = strip_tags($terme);
         }

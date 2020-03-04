@@ -1,7 +1,7 @@
 <?php
 function isLogged()
 {
-    $roles = array('rechercheur', 'admin', 'recruteur');
+    $roles = array('utilisateur', 'admin', 'recruteur');
     if (!empty ($_SESSION['login'])) {
         if (!empty($_SESSION['login']['id']) && filter_var($_SESSION['login']['id'], FILTER_VALIDATE_INT)) {
             if (!empty($_SESSION['login']['nom']) && is_string($_SESSION['login']['nom'])) {
