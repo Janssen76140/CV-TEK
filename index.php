@@ -7,7 +7,6 @@ include('Inc/header.php'); ?>
 
     <section class="wrap" id="projets-section">
         <div class="text-section-projet">
-            <div id="service"></div>
             <h2>Nous pouvons vous aider à <span>trouver un emploi</span></h2>
             <p>
                 Choisissez votre secteur d'activités en un seul clique !
@@ -73,7 +72,7 @@ include('Inc/header.php'); ?>
 
     <section class="contact-section">
             <h3>Contactez-nous</h3>
-            <div id="contact"></div>
+
         <div class="form-footer">
             <form action="#" class="formulaire2">
                 <label for="email">Email</label>
@@ -92,8 +91,7 @@ include('Inc/header.php'); ?>
         </div>
     </section>
 
-    
-
+<?php include('Inc/footer.php'); ?>
 
 
 
