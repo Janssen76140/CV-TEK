@@ -435,15 +435,6 @@ table td{
 
 
 
-.ligne {
-    width: 4px;
-    height: 1300px;
-    background-color: black;
-    position: absolute;
-    top: 100px;
-    transform: translate(700px,0);
-}
-
 .plus {
     cursor: pointer;
     display: inline-block;
@@ -477,40 +468,89 @@ table td{
 
 .formCv {
     width: 50%;
-    padding-top: 50px;
+    background-color: #1d2833;
 }
 
-.formCv h3 {
+.cvform1 {
+    width: 48%;
+    display: inline-block;
+}
+
+.cvform1 h3 {
     text-align: center;
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     font-weight: 300;
     padding: 40px 0;
+    color: white;
 }
 
-.formCv input[type=text] {
+.cvform1 input[type=text] {
     width: 30%;
-    height: 30px;
-    margin-left: 35%;
-    margin-top: 20px;
+    height: 25px;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 1px solid white;
 }
 
-.formCv textarea {
+.cvform1 textarea {
     width: 30%;
     height: 80px;
-    margin-left: 35%;
+    margin-left: 10%;
     resize: none;
-    margin-top: 20px;
-
+    margin-top: 10px;
+    border: 1px solid white;
 }
 
-.formCv label {
-    margin-left: 35%;
-    font-size: 1.1em;
+.cvform1 label {
+    margin-left: 10%;
+    font-size: 0.8em;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    color: white;
 }
+
+.cvform2 {
+    width: 48%;
+    display: inline-block;
+}
+
+.cvform2 h3 {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding: 40px 0;
+    color: white;
+}
+
+.cvform2 input[type=text] {
+    width: 30%;
+    height: 25px;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 1px solid white;
+}
+
+.cvform2 textarea {
+    width: 30%;
+    height: 80px;
+    margin-left: 10%;
+    resize: none;
+    margin-top: 10px;
+    border: 1px solid white;
+}
+
+.cvform2 label {
+    margin-left: 10%;
+    font-size: 0.8em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
 
 .formCv input[type=submit] {
     width: 20%;
