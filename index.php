@@ -1,7 +1,9 @@
 <?php
-
+session_start();
 $title = 'Accueil';
+include('inc/function.php');
 include('Inc/header.php'); ?>
+
 
     <div class="image-header"></div>
 

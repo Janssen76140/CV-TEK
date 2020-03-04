@@ -1,5 +1,6 @@
 <?php
 spl_autoload_register();
+include('functions/function.php');
 
 use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;

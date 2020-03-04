@@ -30,7 +30,7 @@ class ArticleModel
 
     public function getMail()
     {
-        return $this->mail;
+        return $this->email;
     }
 
     public function setMail(string $mail)
@@ -120,6 +120,18 @@ class ArticleModel
     public function setSiret(int $siret)
     {
         $this->sriet = $siret;
+
+        return $this;
+    }
+
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function setRole(string $role)
+    {
+        $this->role = $role;
 
         return $this;
     }

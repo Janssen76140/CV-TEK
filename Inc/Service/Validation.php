@@ -65,7 +65,6 @@ class Validation
             if (!empty($user)) {
 
                 if (password_verify($password, $user->getPassword())) {
-                    session_start();
                     $_SESSION['login'] = array(
                         'id'     => $user->getId(),
                         'mail'   => $user->getMail(),
