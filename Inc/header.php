@@ -18,7 +18,7 @@
 <body class="fittext">
 <header>
     <nav class="wrap">
-        <h1><a href="">CV Projekt</a></h1>
+        <h1><a href="">CV Projet</a></h1>
         <ul>
 <!--            --><?php //if (!isAdmin()){ ?>
             <li><a href="index.php">Accueil</a></li>
@@ -31,13 +31,8 @@
 
 
 
-            <li><a href="admin/index.php">Pannel admin</a></li>
+            <li><a href="admin/index.php">Panel admin</a></li>
         </ul>
     </nav>
 </header>
 </body>
-
-
-
-
-
