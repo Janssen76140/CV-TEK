@@ -7,6 +7,7 @@ use \Inc\Service\Form;
 use \Inc\Service\Validation;
 use Inc\Utils;
 
+include('inc/function.php');
 $title = "Création de CV";
 $errors = array();
 $succes = false;
@@ -65,10 +66,8 @@ $form = new Form($errors);
 
 include('inc/header.php'); ?>
 
-<h2>Edition de CV</h2>
-<div id="titre_cv">
-    <p>{{ message }}</p><input v-model="message">
-</div>
+
+
 <form action="#" method="post" class="formCv">
 
     <div class="cvform1">
