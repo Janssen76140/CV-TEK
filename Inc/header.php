@@ -18,39 +18,39 @@
 <body class="fittext">
 <header>
     <nav class="wrap">
-        <h1><a href="">CV Projekt</a></h1>
+        <h1><a href="">CV Projet</a></h1>
         <ul>
 
 
             <?php if (!isLogged()) { ?>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="index.php#service">Services</a></li>
-                <li><a href="index.php#contact">Contact</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li class="inscription-nav"><a href="inscription.php">Inscription</a></li>
                 <li class="connexion-nav"><a href="connexion.php">Connexion</a></li>
             <?php } elseif ($_SESSION['login']['role'] == "utilisateur") { ?>
 
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="index.php#service">Services</a></li>
-                <li><a href="index.php#contact">Contact</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="CreateCv.php">Creation CV</a></li>
                 <li><a href="index.php#contact">Deconnexion</a></li>
             <?php } elseif ($_SESSION['login']['role'] == "admin") { ?>
 
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="index.php#service">Services</a></li>
-                <li><a href="index.php#contact">Contact</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="CreateCv.php">Creation CV</a></li>
-                <li><a href="index.php#contact">Recherche de CV</a></li>
+                <li><a href="index.php">Recherche de CV</a></li>
                 <li><a href="admin/index.php">Pannel admin</a></li>
-                <li><a href="index.php#contact">Deconnexion</a></li>
+                <li><a href="index.php">Deconnexion</a></li>
             <?php } elseif ($_SESSION['login']['role'] == "recruteur") { ?>
 
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="index.php#service">Services</a></li>
-                <li><a href="index.php#contact">Contact</a></li>
-                <li><a href="index.php#contact">Recherche de CV</a></li>
-                <li><a href="index.php#contact">Deconnexion</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Recherche de CV</a></li>
+                <li><a href="index.php">Deconnexion</a></li>
             <?php } ?>
 
 
@@ -58,8 +58,3 @@
     </nav>
 </header>
 </body>
-
-
-
-
-

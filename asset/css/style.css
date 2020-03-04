@@ -188,6 +188,10 @@ PROJETS
 
 }
 
+.formulaire span {
+    margin-left: 40%;
+}
+
 .formulaire input[type=text], .formulaire input[type=email], .formulaire input[type=password], .formulaire input[type=number] {
     width: 20%;
     height: 40px;
@@ -342,7 +346,7 @@ h4 {
     font-size: 1.4em;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 
@@ -362,17 +366,22 @@ footer {
     display: flex;
     justify-content: center;
     background-color: #89b927;
+    padding: 20px 0;
 }
 
 footer ul li a {
     color: #ffffff;
     margin: 5px;
+}
 
+footer ul li a:hover {
+    opacity: 0.6;
+    transition: 0.5s;
 }
 
 footer .footer-icons{
     background-color: #1d2833;
-    color: #89b927;
+    color: #fff;
     text-align: center;
     padding: 40px;
 }
