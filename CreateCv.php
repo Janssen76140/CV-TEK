@@ -105,59 +105,6 @@ include('inc/header.php'); ?>
         <?= $form->label('description_experience', 'Description de votre éxperience'); ?>
         <?= $form->textarea('description_experience'); ?>
         <?= $form->errors('description_experience'); ?>
-
-        <div class="plus" onclick="ajouter()">+</div>
-        <div class="moin" onclick="enlever()">-</div>
-
-        <div class="ajouter1">
-            <?= $form->label('datedebut_mois', 'Mois'); ?>
-            <?= $form->optionMonth('datedebut_mois'); ?>
-            <?= $form->label('datedebut_annee', 'Année'); ?>
-            <?= $form->optionYear('datedebut_annee', '2020'); ?>
-            <?= $form->label('datefin_mois', 'Mois'); ?>
-            <?= $form->optionMonth('datefin_mois'); ?>
-            <?= $form->label('datefin_annee', 'Année'); ?>
-            <?= $form->optionYear('datefin_annee', '2020'); ?>
-            <?= $form->errors('datedebut'); ?>
-
-            <?= $form->label('intitule_poste', 'Intitulé du poste'); ?>
-            <?= $form->input('intitule_poste', 'text'); ?>
-            <?= $form->errors('intitule_poste'); ?>
-
-            <?= $form->label('nom_entreprise', 'Nom de l\'entreprise'); ?>
-            <?= $form->input('nom_entreprise', 'text'); ?>
-            <?= $form->errors('nom_entreprise'); ?>
-
-            <?= $form->label('description_experience', 'Description de votre éxperience'); ?>
-            <?= $form->textarea('description_experience'); ?>
-            <?= $form->errors('description_experience'); ?>
-            <div class="plus" onclick="ajouter1()">+</div>
-            <div class="moin" onclick="enlever1()">-</div>
-        </div>
-
-        <div class="ajouter2">
-            <?= $form->label('datedebut_mois', 'Mois'); ?>
-            <?= $form->optionMonth('datedebut_mois'); ?>
-            <?= $form->label('datedebut_annee', 'Année'); ?>
-            <?= $form->optionYear('datedebut_annee', '2020'); ?>
-            <?= $form->label('datefin_mois', 'Mois'); ?>
-            <?= $form->optionMonth('datefin_mois'); ?>
-            <?= $form->label('datefin_annee', 'Année'); ?>
-            <?= $form->optionYear('datefin_annee', '2020'); ?>
-            <?= $form->errors('datedebut'); ?>
-
-            <?= $form->label('intitule_poste', 'Intitulé du poste'); ?>
-            <?= $form->input('intitule_poste', 'text'); ?>
-            <?= $form->errors('intitule_poste'); ?>
-
-            <?= $form->label('nom_entreprise', 'Nom de l\'entreprise'); ?>
-            <?= $form->input('nom_entreprise', 'text'); ?>
-            <?= $form->errors('nom_entreprise'); ?>
-
-            <?= $form->label('description_experience', 'Description de votre éxperience'); ?>
-            <?= $form->textarea('description_experience'); ?>
-            <?= $form->errors('description_experience'); ?>
-        </div>
     </div>
 
     <div class="cvform2">
