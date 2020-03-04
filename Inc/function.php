@@ -64,7 +64,7 @@ function generatorToken($length = 10) {
 ///////////////////////////////////////
 
 function is_logged() {
-    $roles = array('abonne','admin');
+    $roles = array('recruteur','admin','utilisateur');
     if (!empty($_SESSION['login'])) {
         if (!empty($_SESSION['login']['id']) && is_numeric($_SESSION['login']['id'])) {
             if (!empty($_SESSION['login']['pseudo'])) {
