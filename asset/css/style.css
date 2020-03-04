@@ -443,3 +443,30 @@ table td{
     top: 100px;
     transform: translate(700px,0);
 }
+
+.plus {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2em;
+    background-color: #1d2833;
+    padding: 3px 5px;
+    border-radius: 50%;
+    margin-left: 5%;
+    color: #fff;
+}
+
+.moin {
+    cursor: pointer;
+    font-size: 2em;
+    display: inline-block;
+    margin-left: 10%;
+    background-color: #1d2833;
+    padding: 3px 5px;
+    border-radius: 50%;
+    color: #fff;
+
+}
+
+.ajouter1 {
+    display: none;
+}

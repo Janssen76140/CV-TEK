@@ -41,3 +41,11 @@ $(document).ready(function(){
     });
 });
 
+function ajouter() {
+    $('.ajouter1').css('display', 'block')
+}
+
+function enlever() {
+    $('.ajouter1').css('display', 'none')
+}
+
