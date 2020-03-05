@@ -30,6 +30,12 @@ if (!empty($_POST['envoyer'])) {
     }
 }
 
+if(!empty($_POST['cgu']) && $_POST['cgu']) {
+
+} else {
+    $errors['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
+}
+
 $form = new Form($errors);
 
 include('Inc/header.php'); ?>
@@ -50,7 +56,14 @@ include('Inc/header.php'); ?>
     <?= $form->input('password2', 'password'); ?>
     <?= $form->errors('password2'); ?>
 
+    <div class="cguconf">
+      <a class="cgubox" href="cgu.php">Conditions générales d’utilisation</a>
+            <input type="checkbox" name="cgu" id="cgu" value="yes" <?php  if(!empty($_GET['condition'])) {if($_GET['condition'] == 'yes') {echo 'checked';}} ?>>
+            <p class="error"><?php if(!empty($errors['cgu'])) { echo $errors['cgu']; } ?></p>
+    </div>
+
   <?= $form->submit('envoyer','S\'inscrire'); ?>
+
 
 </form>
 <div class="espace"></div>

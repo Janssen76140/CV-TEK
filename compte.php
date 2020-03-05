@@ -1,6 +1,7 @@
 <?php
+session_start();
 spl_autoload_register();
-include('functions/function.php');
+include('inc/function.php');
 
 use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;
@@ -12,6 +13,8 @@ $errors = array();
 $success = false;
 $utils = new Utils;
 $userId = $utils->getCurrentUserId();
+$repo = new ArticleRepository;
+
 
 if (!empty($_POST['envoyer'])) {
     // FAILLE XSS
@@ -30,50 +33,114 @@ if (!empty($_POST['envoyer'])) {
 
     if (count($errors) == 0 && $userId) {
         // INSERT into
-        
-        $repo = new ArticleRepository;
-        $register = $repo->insertInfo($userId, $nom,$prenom,$adresse,$telephone);
+        $register = $repo->insertInfo($userId, $nom, $prenom, $adresse, $telephone);
         $success = true;
-        header('Location: connexion.php');
+        header('Location: compte.php');
     }
 }
 
+if(isset($_POST['Upload'])){
+
+    $fileName = $_FILES['file']['name'];
+    $target_dir = "upload/";
+    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+
+    // Select file type
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+    // Valid file extensions
+    $extensions_arr = array("jpg","jpeg","png");
+
+    // Check extension
+    if( in_array($imageFileType,$extensions_arr) ){
+        $insert = $repo->insertImage($fileName, $userId);
+
+        // Upload file
+        move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$fileName);
+
+    }
+
+}
+$selectImage = $repo->selectImage($row);
+
+$image = $row['file_name'];
+$image_src = "upload/".$image;
+?>
+
+<img src='<?php echo $image_src;  ?>' width="100%">
+
+<?php
 $form = new Form($errors);
 
 include('Inc/header.php'); ?>
+<div class="espace2"></div>
+<h3 class="titrecompte">Mon compte</h3>
+<div class="compte">
+    
+    <h4>Mes informations</h4>
 
-<h3>Mon compte</h3>
-<span>Mes informations</span> <?php
+    <?php
+    $repository = new ArticleRepository;
+    if ($userId != false) {
+        $info = $repository->selectInfo($userId);
+        echo '<p>' . $info['email'] . '</p>';
+    } 
+    if ($userId != false) {
+        $info = $repository->selectInfo($userId);
+        echo '<p>' . $info['nom'] . '</p>';
+    } 
+    if ($userId != false) {
+        $info = $repository->selectInfo($userId);
+        echo '<p>' . $info['prenom'] . '</p>';
+    }
+    if ($userId != false) {
+        $info = $repository->selectInfo($userId);
+        echo '<p>' . $info['adresse'] . '</p>';
+    }
+    if ($userId != false) {
+        $info = $repository->selectInfo($userId);
+        echo '<p>' . $info['telephone'] . '</p>';
+    } ?>
+    <p><a href="mdpOublie.php">Changer votre mot de passe</a></p>
+    <p class="messageRouge">* Si vous voulez que votre CV soit retrouvé veuillez renseigner les informations suivantes</p>
+</div>
+<div class="compte2">
+    <h4>Compléter mes information</h4>
 
+    <form action="" method="post" class="formulaireCompte">
 
-$repository = new ArticleRepository;
-if ($userId != false) {
-    $info = $repository->selectInfo($userId); 
-    echo '<p>' . $info['email'] . '</p>';
-} ?>
-<a href="mdpOublie.php">Changer votre mot de passe</a>
+        <?= $form->label('nom', 'Nom'); ?>
+        <?= $form->input('nom', 'text'); ?>
+        <?= $form->errors('nom'); ?>
 
-<span>Compléter mes information</span>
+        <?= $form->label('prenom', 'Prénom'); ?>
+        <?= $form->input('prenom', 'text'); ?>
+        <?= $form->errors('prenom'); ?>
 
-<form action="" method="post">
+        <?= $form->label('adresse', 'Adresse'); ?>
+        <?= $form->input('adresse', 'text'); ?>
+        <?= $form->errors('adresse'); ?>
 
-    <?= $form->label('nom', 'Nom'); ?>
-    <?= $form->input('nom', 'text'); ?>
-    <?= $form->errors('nom'); ?>
+        <?= $form->label('telephone', 'Telephone'); ?>
+        <?= $form->input('telephone', 'number'); ?>
+        <?= $form->errors('telephone'); ?>
 
-    <?= $form->label('prenom', 'Prénom'); ?>
-    <?= $form->input('prenom', 'text'); ?>
-    <?= $form->errors('prenom'); ?>
+        <?= $form->submit('envoyer', 'Modifier'); ?>
+    </form>
+</div>
 
-    <?= $form->label('adresse', 'Adresse'); ?>
-    <?= $form->input('adresse', 'text'); ?>
-    <?= $form->errors('adresse'); ?>
+<h3>Ajouter mon cv</h3>
+<form  method="post" enctype="multipart/form-data">
+    <?= $form->input('file', 'file'); ?>
 
-    <?= $form->label('telephone', 'Telephone'); ?>
-    <?= $form->input('telephone', 'number'); ?>
-    <?= $form->errors('telephone'); ?>
-
-    <?= $form->submit('envoyer','Modifier'); ?>
+    <?= $form->label('Cle', 'Ajoute des mots clés correspondant à ton cv'); ?>
+    <?= $form->input('Cle', 'text'); ?>
+    <?= $form->submit('submit','Upload'); ?>
 </form>
-
 <?php include('Inc/footer.php');
+
+
+?>
+
+
+

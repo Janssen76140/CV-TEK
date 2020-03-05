@@ -1,15 +1,15 @@
 <?php
+session_start();
 spl_autoload_register();
-
+include('inc/function.php');
 use Inc\Service\Bdd;
 $select = new Bdd();
 $selectall = $select->select();
 $selectcount = $select->count('recruteur');
 $selectcountmember = $select->count('utilisateur');
 $selectcountcv = $select->countCv();
-print_r($selectall);
-
-
+$selectcountadmin = $select->countAdmin();
+include('inc/header.php');
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ print_r($selectall);
 
   <!-- Custom styles for this template-->
   <link href="admin/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="asset/css/style.css">
+  <link rel="stylesheet" href="asset/css/style.css">
 
 </head>
 
@@ -48,13 +48,6 @@ print_r($selectall);
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-            <ul>
-                <a href="admin/user.php"><li>Users</li></a>
-                <a href="admin/cv.php"><li>CV</li></a>
-            </ul>
-        </nav>
-        <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -74,7 +67,7 @@ print_r($selectall);
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Personnes inscrites</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Nombre de rechercheur d'emploi</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $selectcountmember[0]['count(*)'] ?></div>
                     </div>
                   </div>
@@ -82,23 +75,8 @@ print_r($selectall);
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
+
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Nombre de cv</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $selectcountcv[0]['count(*)'] ?></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-
-              <div class="col-xl-3 col-md-6 mb-4">
                   <div class="card border-left-info shadow h-100 py-2">
                       <div class="card-body">
                           <div class="row no-gutters align-items-center">
@@ -115,6 +93,47 @@ print_r($selectall);
                       </div>
                   </div>
               </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+          
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-info shadow h-100 py-2">
+                      <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                  <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Nombre d'admin</div>
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col-auto">
+                                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $selectcountadmin[0]['count(*)'] ?></div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+
+              
+
+              <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Nombre de personnes inscrite</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $selectcountcv[0]['count(*)'] ?></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+              
 
               <!-- Content Row -->
 
@@ -181,3 +200,5 @@ print_r($selectall);
 </body>
 
 </html>
+
+

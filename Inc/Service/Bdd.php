@@ -27,7 +27,15 @@ class Bdd
 
     function countCv(){
         $pdo = LocalPdo::getPdo();
-        $sql = "SELECT count(*) FROM $this->tablecv WHERE id=id";
+        $sql = "SELECT count(*) FROM $this->table WHERE id=id";
+        $query = $pdo->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+    function countAdmin(){
+        $pdo = LocalPdo::getPdo();
+        $sql = "SELECT count(*) FROM $this->table WHERE role='admin'";
         $query = $pdo->prepare($sql);
         $query->execute();
         return $query->fetchAll();

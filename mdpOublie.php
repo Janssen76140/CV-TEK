@@ -10,7 +10,7 @@ $title = "Modifier le mot de passe";
 $errors = array();
 $success = false;
 
-if (!empty($_POST['submitted'])) {
+if (!empty($_POST['envoyer'])) {
 
     // Faille XSS
     $faille = new Utils;
@@ -31,6 +31,8 @@ if (!empty($_POST['submitted'])) {
 
     $form = new Form($errors);
 
+} else {
+    header('Location: 404.html');
 }
 
 
@@ -49,7 +51,7 @@ include('Inc/header.php'); ?>
     <?= $form->input('password', 'password'); ?>
     <?= $form->errors('password'); ?>
 
-    <?= $form->submit(); ?>
+    <?= $form->submit('envoyer','Envoyer'); ?>
 </form>
 
 <?php include('Inc/footer.php');
