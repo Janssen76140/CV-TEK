@@ -35,7 +35,7 @@ if (!empty($_POST['envoyer'])) {
         $repo = new ArticleRepository;
         $register = $repo->insertInfo($userId, $nom, $prenom, $adresse, $telephone);
         $success = true;
-        header('Location: connexion.php');
+        header('Location: compte.php');
     }
 } 
 
@@ -52,10 +52,26 @@ include('Inc/header.php'); ?>
     $repository = new ArticleRepository;
     if ($userId != false) {
         $info = $repository->selectInfo($userId);
-        echo '<p>• ' . $info['email'] . '</p>';
+        echo '<p>' . $info['email'] . '</p>';
+    } 
+    if ($userId != false) {
+        $info = $repository->selectInfo($userId);
+        echo '<p>' . $info['nom'] . '</p>';
+    } 
+    if ($userId != false) {
+        $info = $repository->selectInfo($userId);
+        echo '<p>' . $info['prenom'] . '</p>';
+    }
+    if ($userId != false) {
+        $info = $repository->selectInfo($userId);
+        echo '<p>' . $info['adresse'] . '</p>';
+    }
+    if ($userId != false) {
+        $info = $repository->selectInfo($userId);
+        echo '<p>' . $info['telephone'] . '</p>';
     } ?>
     <p><a href="mdpOublie.php">Changer votre mot de passe</a></p>
-    <p class="messageRouge">* Si vous voulez que votre CV soit retrouvé veuillez rensigner les informations suivantes</p>
+    <p class="messageRouge">* Si vous voulez que votre CV soit retrouvé veuillez renseigner les informations suivantes</p>
 </div>
 <div class="compte2">
     <h4>Compléter mes information</h4>

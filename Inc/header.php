@@ -43,7 +43,7 @@
 
                 <li><a href="CreateCv.php">Creation CV</a></li>
                 <li><a href="recherche.php">Recherche de CV</a></li>
-                <li><a href="admin/index.php">Pannel admin</a></li>
+                <li><a href="admin.php">Pannel admin</a></li>
                 <li><a href="compte.php">Mon compte</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
 
