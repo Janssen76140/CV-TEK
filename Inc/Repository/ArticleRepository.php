@@ -13,6 +13,7 @@ class ArticleRepository
     private $formation = 'formation_cv';
     private $interet = 'centre_interets';
     private $competence = 'competence_cv';
+    private $upload = 'upload';
 
     public function findByEmail($mail)
     {
@@ -116,6 +117,17 @@ class ArticleRepository
         $query = $pdo->prepare($sql);
         $query->bindValue(':userId', $userId, \PDO::PARAM_STR);
         $query->bindValue(':competences', $competences, \PDO::PARAM_STR);
+        $query->execute();
+    }
+    public function insertImage($userId,$info,$fileName)
+    {
+        $pdo = LocalPdo::getPdo();
+        $sql = "INSERT into upload  VALUES (NULL, :userId, :info , :fileName , NOW())";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':fileName', $fileName, \PDO::PARAM_STR);
+        $query->bindValue(':info', $info, \PDO::PARAM_STR);
+        $query->bindValue(':userId', $userId, \PDO::PARAM_STR);
+        $query = $pdo->prepare($sql);
         $query->execute();
     }
     
