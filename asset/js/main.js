@@ -41,5 +41,9 @@ $(document).ready(function(){
     });
 });
 
-
+function afficher(){
+    var saisie =document.getElementById("titre_cv").value;
+    var res = document.getElementById("titre_cv1");
+    res.innerHTML = saisie;
+    }
 

@@ -1,0 +1,44 @@
+.gauche {
+    width: 100%;
+    float: left;
+    background-color: #1d2833;
+}
+
+.visuel_cv {
+    display: flex;
+    width: 49.9999999%;
+    display: inline-block;
+    padding-top: 60px;
+}
+
+.visuel_cv .visuel_cv_a4 {
+    position: absolute;
+    height: 842px;
+    width: 596px;
+    margin-left: 4.5%;
+    background-color: lime;
+}
+
+.visuel_cv .visuel_cv_a4 .background_titre 
+{
+    position: relative;
+    height: 100px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    background-color: #222222;
+}
+
+.visuel_cv .visuel_cv_a4 .background_titre .nom_visuel 
+{
+    font-size: 100px;
+    color: red;
+}
+
+.visuel_cv #titre_cv1{
+font-size: 50px;
+color: lime;
+text-align: center;
+padding-top: 100px;
+}
