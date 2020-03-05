@@ -60,6 +60,8 @@ if (!empty($_POST['envoyer_cv'])) {
         $success = true;
         //header('Location: CreateCv.php');
     }
+} else {
+    header('Location: 404.html');
 }
 
 $form = new Form($errors);

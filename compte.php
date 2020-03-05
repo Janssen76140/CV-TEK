@@ -37,7 +37,7 @@ if (!empty($_POST['envoyer'])) {
         $success = true;
         header('Location: connexion.php');
     }
-}
+} 
 
 $form = new Form($errors);
 
