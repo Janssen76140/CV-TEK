@@ -14,11 +14,17 @@ if (!empty($_POST['envoyer'])) {
     $mail    = trim(strip_tags($_POST['mail']));
     $mdp     = trim(strip_tags($_POST['password']));
     $confmdp = trim(strip_tags($_POST['password2']));
+    if (isset($_POST['cgu'])) {
+      $cgu   = trim(strip_tags($_POST['cgu']));
+    } else {
+      $cgu = false;
+    }
 
     // Validation
     $v = new Validation();
     $v->ValidMail($errors, $mail);
     $v->ValidMdp($errors, $mdp, $confmdp);
+    $v->ValidCgu($errors, $cgu);
 
     if (count($errors) == 0) {
         // INSERT into
@@ -28,12 +34,6 @@ if (!empty($_POST['envoyer'])) {
         $success = true;
         header('Location: connexion.php');
     }
-}
-
-if(!empty($_POST['cgu']) && $_POST['cgu']) {
-
-} else {
-    $errors['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
 }
 
 $form = new Form($errors);

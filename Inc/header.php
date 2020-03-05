@@ -12,6 +12,7 @@
             echo 'nom du site';
         } ?> </title>
     <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/createcv.css">
     <link rel="stylesheet" href="asset/css/compte.css">
 
 </head>
