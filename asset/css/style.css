@@ -343,6 +343,10 @@ PROJETS
     border: 1px solid #1d2833;
 }
 
+.cguconf {
+  margin-left: 400px;
+}
+
 h4 {
     text-align: center;
     font-size: 1.4em;
