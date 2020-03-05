@@ -39,47 +39,47 @@ if (!empty($_POST['envoyer'])) {
     }
 }
 
-if(isset($_POST['Upload'])){
+// if(isset($_POST['Upload'])){
 
-    $fileName = $_FILES['file']['name'];
-    $target_dir = "upload/";
-    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+//     $fileName = $_FILES['file']['name'];
+//     $target_dir = "upload/";
+//     $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
-    // Select file type
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+//     // Select file type
+//     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-    // Valid file extensions
-    $extensions_arr = array("jpg","jpeg","png","gif");
+//     // Valid file extensions
+//     $extensions_arr = array("jpg","jpeg","png","gif");
 
     // Check extension
-    if( in_array($imageFileType,$extensions_arr) ){
-        $info           = trim(strip_tags($_POST['Cle']));
-        $pdo = LocalPdo::getPdo();
-        $sql = "INSERT into upload  VALUES (NULL, :userId, :info , :fileName , NOW())";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':fileName', $fileName, \PDO::PARAM_STR);
-        $query->bindValue(':info', $info, \PDO::PARAM_STR);
-        $query->bindValue(':userId', $userId, \PDO::PARAM_STR);
-        $query = $pdo->prepare($sql);
-        $query->execute();
+    // if( in_array($imageFileType,$extensions_arr) ){
+    //     $info           = trim(strip_tags($_POST['Cle']));
+    //     $pdo = LocalPdo::getPdo();
+    //     $sql = "INSERT into upload  VALUES (NULL, :userId, :info , :fileName , NOW())";
+    //     $query = $pdo->prepare($sql);
+    //     $query->bindValue(':fileName', $fileName, \PDO::PARAM_STR);
+    //     $query->bindValue(':info', $info, \PDO::PARAM_STR);
+    //     $query->bindValue(':userId', $userId, \PDO::PARAM_STR);
+    //     $query = $pdo->prepare($sql);
+    //     $query->execute();
 
-        // Upload file
-        move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$fileName);
+    //     // Upload file
+    //     move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$fileName);
 
-    }
+//}
 
-}
-$pdo = LocalPdo::getPdo();
-$sql = "SELECT * FROM upload  WHERE id = 29 ";
-$query = $pdo->prepare($sql);
-$query->execute();
-$row = $query->fetch();
+// }
+// $pdo = LocalPdo::getPdo();
+// $sql = "SELECT * FROM upload  WHERE id = 29 ";
+// $query = $pdo->prepare($sql);
+// $query->execute();
+// $row = $query->fetch();
 
-$image = $row['file_name'];
-$image_src = "upload/".$image;
+// $image = $row['file_name'];
+// $image_src = "upload/".$image;
 ?>
 
-<img src='<?php echo $image_src;  ?>' width="100%">
+<!-- <img src='<?php echo $image_src;  ?>' width="100%"> -->
 
 <?php
 $form = new Form($errors);
@@ -153,6 +153,3 @@ include('Inc/header.php'); ?>
 
 
 ?>
-
-
-
