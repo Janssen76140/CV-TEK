@@ -79,7 +79,7 @@ if (!empty($_POST['envoyer'])) {
 // $image_src = "upload/".$image;
 ?>
 
-<!-- <img src='<?php echo $image_src;  ?>' width="100%"> -->
+<img src='<?php echo $image_src;  ?>' width="100%">
 
 <?php
 $form = new Form($errors);
