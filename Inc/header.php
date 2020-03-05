@@ -3,16 +3,17 @@
 
 <head>
     <meta charset="utf-8">
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title><?php if (!empty($title)) {
             echo $title;
         } else {
             echo 'nom du site';
         } ?> </title>
     <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="asset/css/compte.css">
 
 </head>
 
@@ -20,8 +21,8 @@
 <body class="fittext">
 <header>
     <nav class="wrap">
-        <h1><a href="">CV Projet</a></h1>
-        <ul>
+        <h1><a class="active" href="">CV Projet</a></h1>
+        <ul id="myLinks">
 
             <li><a href="index.php">Accueil</a></li>
             <li><a href="#service">Services</a></li>
@@ -53,9 +54,11 @@
                 <li><a href="compte.php">Mon compte</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
             <?php } ?>
-
-
         </ul>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </nav>
+
 </header>
 </body>
