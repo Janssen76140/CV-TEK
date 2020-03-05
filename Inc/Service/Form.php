@@ -86,6 +86,11 @@ class Form
         return $years;
     }
 
+    public function inputAfficher($type, $name, $value)
+    {
+        return '<input type="'. $type .'" id="'. $name .'" value="'. $value .'" onclick="afficher()">';
+    }
+
 
     public function errors($name)
     {

@@ -119,17 +119,6 @@ class ArticleRepository
         $query->bindValue(':competences', $competences, \PDO::PARAM_STR);
         $query->execute();
     }
-    public function insertImage($userId,$info,$fileName)
-    {
-        $pdo = LocalPdo::getPdo();
-        $sql = "INSERT into upload  VALUES (NULL, :userId, :info , :fileName , NOW())";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':fileName', $fileName, \PDO::PARAM_STR);
-        $query->bindValue(':info', $info, \PDO::PARAM_STR);
-        $query->bindValue(':userId', $userId, \PDO::PARAM_STR);
-        $query = $pdo->prepare($sql);
-        $query->execute();
-    }
     
     public function modifPassword($email)
     {
@@ -163,4 +152,26 @@ class ArticleRepository
         $query->bindValue(':telephone', $telephone, \PDO::PARAM_STR);
         $query->execute();
     }
+
+    public function insertImage($fileName, $userId){
+        $info           = trim(strip_tags($_POST['Cle']));
+        $pdo = LocalPdo::getPdo();
+        $sql = "INSERT into $this->upload  VALUES (NULL, :userId, :info , :fileName , NOW())";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':fileName', $fileName, \PDO::PARAM_STR);
+        $query->bindValue(':info', $info, \PDO::PARAM_STR);
+        $query->bindValue(':userId', $userId, \PDO::PARAM_STR);
+        $query = $pdo->prepare($sql);
+        $query->execute();
+        return $query;
+    }
+    public function selectImage($row){
+        $pdo = LocalPdo::getPdo();
+        $sql = "SELECT * FROM $this->upload  WHERE id = 29 ";
+        $query = $pdo->prepare($sql);
+        $query->execute();
+        $row = $query->fetch();
+        return $row;
+    }
+
 }
