@@ -39,7 +39,7 @@ if (!empty($_POST['envoyer'])) {
     }
 }
 
-if(isset($_POST['Upload'])){
+if(isset($_POST['upload'])){
 
     $fileName = $_FILES['file']['name'];
     $target_dir = "upload/";
@@ -55,9 +55,7 @@ if(isset($_POST['Upload'])){
     if( in_array($imageFileType,$extensions_arr) ){
         $insert = $repo->insertImage($fileName, $userId);
 
-        // Upload file
         move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$fileName);
-
     }
 
 }
@@ -135,7 +133,7 @@ include('Inc/header.php'); ?>
 
     <?= $form->label('Cle', 'Ajoute des mots clés correspondant à ton cv'); ?>
     <?= $form->input('Cle', 'text'); ?>
-    <?= $form->submit('submit','Upload'); ?>
+    <?= $form->submit('upload','Upload'); ?>
 </form>
 <?php include('Inc/footer.php');
 
