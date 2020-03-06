@@ -20,7 +20,11 @@ if (!empty($_POST['envoyer'])) {
     $password      = trim(strip_tags($_POST['password']));
     $password2     = trim(strip_tags($_POST['password2']));
     $email         = trim(strip_tags($_POST['mail']));
-    $cgu           = trim(strip_tags($_POST['cgu']));
+    if (isset($_POST['cgu'])) {
+      $cgu   = trim(strip_tags($_POST['cgu']));
+    } else {
+      $cgu = false;
+    }
 
     // Validation
     $v = new Validation();
