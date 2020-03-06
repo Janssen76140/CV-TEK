@@ -16,14 +16,14 @@
     height: 842px;
     width: 596px;
     margin-left: 4.5%;
-    background-color: lime;
+    background-color: white;
 }
 
 .visuel_cv .visuel_cv_a4 .background_titre 
 {
     position: relative;
-    height: 100px;
-    width: 500px;
+    height: 11.82%;
+    width: 83.89%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -32,13 +32,28 @@
 
 .visuel_cv .visuel_cv_a4 .background_titre .nom_visuel 
 {
-    font-size: 100px;
-    color: red;
+    display: inline-block;
+    font-size: 1.4em;
+    color: white;
+    margin-left: 2%;
+}
+
+.infoNom {
+    text-align: center;
+    padding-top: 20px;
 }
 
 .visuel_cv #titre_cv1{
-font-size: 50px;
-color: lime;
+font-size: 0.8em;
+color:white;
 text-align: center;
-padding-top: 100px;
+padding-top: 20px;
+}
+
+.visuel_cv .visuel_cv_a4 .barre_lateral_gauche
+{
+    height: 80%;
+    width: 40%;
+    background-color: #CCCCCC;
+    margin-left: 8.1%;
 }
