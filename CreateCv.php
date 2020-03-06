@@ -166,6 +166,10 @@ include('inc/header.php'); ?>
                     $html .= '<h3>Contact</h3>'; 
                     $html .= '<p class="contact_adresse">' . $info['adresse'] . '</p>';
                     $html .= '<p class="contact_telephone">' . $info['telephone'] . '</p>';
+                    $html .= '<p class="contact_email">' . $info['email'] . '</p>';
+
+                    $html .= '<h3>Compétences</h3>';
+                    $html .= '<p id="competences_1"></p>';
                 $html .= '</div>';
                 echo $html;
             } ?>
