@@ -640,6 +640,92 @@ table td {
     outline: none;
 }
 
+
+/*////////////////////////
+         COMPTE
+ //////////////////////*/
+
+
+ .compte {
+    width: 46%;
+    float: left;
+    background-color: #1d2833;
+    padding-bottom: 255px;
+    margin-left: 4%;
+}
+
+.compte2 {
+    width: 46%;
+    display: inline-block;
+    background-color: #89b927;
+    padding-bottom: 40px;
+}
+
+.titrecompte {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 300;
+    padding: 40px 0;
+}
+
+.compte h4 {
+    text-align: center;
+    font-size: 1.6em;
+    color: white;
+    padding-bottom: 60px;
+}
+
+.compte p {
+    text-align: center;
+    font-size: 1em;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.compte p a {
+    text-align: center;
+    font-size: 0.8em;
+    color: rgb(124, 124, 124);
+    text-decoration: none;
+}
+
+.compte .messageRouge {
+    text-align: center;
+    font-size: 0.8em;
+    color: rgb(136, 27, 27);
+    padding-top: 60px;
+}
+
+.compte p a:hover {
+    color: #89b927;
+}
+
+.formulaireCompte {
+    margin-left: 38%;
+}
+
+.formulaireCompte input[type=text], .formulaireCompte input[type=number] {
+    width: 40%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.formulaireCompte input[type=submit] {
+    width: 20%;
+    padding: 10px 0;
+    margin-left: 10%;
+    background-color: #1d2833;
+    color: #fff;
+    border: 1px solid #1d2833;
+}
+
+.formulaireCompte input[type=submit]:hover {
+    background-color: #fff;
+    color: #1d2833;
+    border: 1px solid #1d2833;
+}
+
+
 /************
 MEDIA QUERIES
 ************/
