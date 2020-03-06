@@ -153,15 +153,23 @@ include('inc/header.php'); ?>
 
 <div class="visuel_cv">
     <div class="visuel_cv_a4">
-        <div class="background_titre">
             <?php if ($userId !== false) {
                 $info = $repo->selectInfo($userId);
-                $html = '<p class="nom_visuel">' . $info['nom'] . '</p>';
-                $html .= '<p class="nom_visuel">' . $info['prenom'] . '</p>';
+                $html = '<div class="background_titre">';
+                    $html .= '<div class="infoNom">';
+                        $html .= '<p class="nom_visuel">' . $info['nom'] . '</p>';
+                        $html .= '<p class="nom_visuel">' . $info['prenom'] . '</p>';
+                        $html .= '<p id="titre_cv1"></p>';
+                    $html .= '</div>';
+                $html .= '</div>';
+                $html .= '<div class="barre_lateral_gauche">';
+                    $html .= '<h3>Contact</h3>'; 
+                    $html .= '<p class="contact_adresse">' . $info['adresse'] . '</p>';
+                    $html .= '<p class="contact_telephone">' . $info['telephone'] . '</p>';
+                $html .= '</div>';
+                echo $html;
             } ?>
-        </div>
     </div>
 </div>
 
-<div class="clear"></div>
 <?php include('inc/footer.php');
