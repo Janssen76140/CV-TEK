@@ -8,11 +8,18 @@ use Inc\LocalPdo;
 class Bdd
 {
     private $table = 'users_recruteur';
-    private $tablecv = 'edition_cv';
+    private $tablecv = 'upload';
 
     function select(){
         $pdo = LocalPdo::getPdo();
         $sql = "SELECT * FROM $this->table";
+        $query = $pdo->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
+    function selectCV(){
+        $pdo = LocalPdo::getPdo();
+        $sql = "SELECT * FROM $this->tablecv";
         $query = $pdo->prepare($sql);
         $query->execute();
         return $query->fetchAll();

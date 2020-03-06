@@ -4,6 +4,7 @@ spl_autoload_register();
 include('inc/function.php');
 use Inc\Service\Bdd;
 $select = new Bdd();
+$selectCv = $select->selectCV();
 $selectall = $select->select();
 $selectcount = $select->count('recruteur');
 $selectcountmember = $select->count('utilisateur');
@@ -152,6 +153,28 @@ include('inc/header.php');
                     "<td>".$user['prenom'] ."</td>",
                     "<td>".$user['email']."</td>",
                     "<td>".$user['role']."</td>",
+                    '<td><a href="supp_user.php?id='?><?php echo $user['id']. '">SUPPRESSION</a></td>';
+            }?>
+              </table>
+          </div>
+          <h1 class="h3 mb-0 text-gray-800">Pannel des CV</h1>
+          <div class="row">
+              <table>
+                  <tr>
+                      <th >Nom</th>
+                      <th >Prénom</th>
+                      <th >Email</th>
+                      <th >telephone</th>
+                      <th >adresse</th>
+                      <th > </th>
+                  </tr>
+
+            <?php foreach ($selectall as $user){
+                echo  "<br><tr>" . "<td>".$user['nom'] ."</td>" ,
+                    "<td>".$user['prenom'] ."</td>",
+                    "<td>".$user['email']."</td>",
+                    "<td>".$user['telephone']."</td>",
+                    "<td>".$user['adresse']."</td>",
                     '<td><a href="supp_user.php?id='?><?php echo $user['id']. '">SUPPRESSION</a></td>';
             }?>
               </table>
