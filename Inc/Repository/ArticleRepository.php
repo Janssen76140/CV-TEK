@@ -153,25 +153,24 @@ class ArticleRepository
         $query->execute();
     }
 
-    public function insertImage($fileName, $userId){
-        $info           = trim(strip_tags($_POST['Cle']));
+    public function insertImage($fileName, $userId,$info){
         $pdo = LocalPdo::getPdo();
-        $sql = "INSERT into $this->upload  VALUES (NULL, :userId, :info , :fileName , NOW())";
+        $sql = "INSERT INTO $this->upload  VALUES (NULL, :userd, :infoj , :filename , NOW())";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':fileName', $fileName, \PDO::PARAM_STR);
-        $query->bindValue(':info', $info, \PDO::PARAM_STR);
-        $query->bindValue(':userId', $userId, \PDO::PARAM_STR);
-        $query = $pdo->prepare($sql);
+        $query->bindValue(':userd', $userId);
+        $query->bindValue(':infoj', $info, \PDO::PARAM_STR);
+        $query->bindValue(':filename', $fileName, \PDO::PARAM_STR);
         $query->execute();
         return $query;
     }
-    public function selectImage($row){
+    public function selectImage($user_id)
+    {
         $pdo = LocalPdo::getPdo();
-        $sql = "SELECT * FROM $this->upload  WHERE id = 29 ";
+        $sql = "SELECT * FROM $this->upload WHERE user_id = :user_id";
         $query = $pdo->prepare($sql);
+        $query->bindValue(':user_id', $user_id, \PDO::PARAM_STR);
         $query->execute();
-        $row = $query->fetch();
-        return $row;
+        return $query->fetchAll();
     }
 
 }

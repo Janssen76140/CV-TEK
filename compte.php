@@ -12,9 +12,10 @@ $title = "Mon compte";
 $errors = array();
 $success = false;
 $utils = new Utils;
-$userId = $utils->getCurrentUserId();
-$repo = new ArticleRepository;
 
+$repo = new ArticleRepository();
+$userId = $utils->getCurrentUserId();
+$User = $repo->selectInfo($userId);
 
 if (!empty($_POST['envoyer'])) {
     // FAILLE XSS
@@ -39,7 +40,7 @@ if (!empty($_POST['envoyer'])) {
     }
 }
 
-if(isset($_POST['upload'])){
+if(isset($_POST['submit'])){
 
     $fileName = $_FILES['file']['name'];
     $target_dir = "upload/";
@@ -53,21 +54,16 @@ if(isset($_POST['upload'])){
 
     // Check extension
     if( in_array($imageFileType,$extensions_arr) ){
-        $insert = $repo->insertImage($fileName, $userId);
-
+        $information           = trim(strip_tags($_POST['Cle']));
+        $insert = $repo->insertImage($fileName, $userId , $information);
+        // Upload file
         move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$fileName);
+
     }
 
 }
-$selectImage = $repo->selectImage($row);
+$selectImages = $repo->selectImage($userId);
 
-$image = $row['file_name'];
-$image_src = "upload/".$image;
-?>
-
-<img src='<?php echo $image_src;  ?>' width="100%">
-
-<?php
 $form = new Form($errors);
 
 include('Inc/header.php'); ?>
@@ -133,8 +129,15 @@ include('Inc/header.php'); ?>
 
     <?= $form->label('Cle', 'Ajoute des mots clés correspondant à ton cv'); ?>
     <?= $form->input('Cle', 'text'); ?>
-    <?= $form->submit('upload','Upload'); ?>
+    <?= $form->submit('submit','Upload'); ?>
 </form>
+<?php
+foreach ($selectImages as $selectImage){
+
+    ?> <img src="upload/<?php echo $selectImage['file_name']; ?>" width="100px"><?php
+}
+?>
+
 <?php include('Inc/footer.php');
 
 
