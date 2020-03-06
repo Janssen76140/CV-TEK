@@ -62,17 +62,8 @@ if(isset($_POST['submit'])){
     }
 
 }
-$selectImage = $repo->selectImage($userId);
-print_r($selectImage);
-$image = $selectImage['file_name'];
-$image_src = "upload/".$image;
-?>
+$selectImages = $repo->selectImage($userId);
 
-<img src='<?php foreach ($image_src as $image_source) {
-
-} echo $image_source;  ?>' width="100%">
-
-<?php
 $form = new Form($errors);
 
 include('Inc/header.php'); ?>
@@ -140,6 +131,13 @@ include('Inc/header.php'); ?>
     <?= $form->input('Cle', 'text'); ?>
     <?= $form->submit('submit','Upload'); ?>
 </form>
+<?php
+foreach ($selectImages as $selectImage){
+
+    ?> <img src="upload/<?php echo $selectImage['file_name']; ?>" width="100px"><?php
+}
+?>
+
 <?php include('Inc/footer.php');
 
 

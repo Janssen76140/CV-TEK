@@ -163,12 +163,12 @@ class ArticleRepository
         $query->execute();
         return $query;
     }
-    public function selectImage($id)
+    public function selectImage($user_id)
     {
         $pdo = LocalPdo::getPdo();
-        $sql = "SELECT * FROM $this->upload WHERE id = :id";
+        $sql = "SELECT * FROM $this->upload WHERE user_id = :user_id";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':id', $id, \PDO::PARAM_INT);
+        $query->bindValue(':user_id', $user_id, \PDO::PARAM_STR);
         $query->execute();
         return $query->fetchAll();
     }
