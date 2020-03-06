@@ -1,10 +1,10 @@
 <?php
 session_start();
 spl_autoload_register();
+include('inc/function.php');
 if (!isAdmin()){
     header("Location: 404.html");
 }
-include('inc/function.php');
 use Inc\Service\Bdd;
 $select = new Bdd();
 $selectCv = $select->selectCV();

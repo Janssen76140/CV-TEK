@@ -1,6 +1,7 @@
 <?php
 session_start();
 spl_autoload_register();
+include('inc/function.php');
 if (!isLogged()){
     header("Location: 404.html");
 }
@@ -10,7 +11,7 @@ use \Inc\Service\Form;
 use \Inc\Service\Validation;
 use Inc\Utils;
 
-include('inc/function.php');
+
 $title = "Création de CV";
 $errors = array();
 $succes = false;

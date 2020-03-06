@@ -1,6 +1,7 @@
 <?php
 session_start();
 spl_autoload_register();
+include('inc/function.php');
 if (!isAdmin()){
     header("Location: 404.html");
 }
@@ -8,7 +9,6 @@ if (!isAdmin()){
 use Inc\Service\SearchBar;
 use Inc\Utils;
 
-include('inc/function.php');
 $search = new SearchBar();
 $getword = $search->getWord();
 $recherches = $search->findWord($getword);

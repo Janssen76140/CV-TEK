@@ -1,5 +1,5 @@
 <?php
-
+include('inc/function.php');
 spl_autoload_register();
 if (!isAdmin()){
     header("Location: 404.html");
