@@ -798,10 +798,12 @@ Delete img and vh
         background-color: #1d2833;
         position: relative;
     }
+
     header nav ul li a:hover {
-       color: white;
+        color: white;
     }
-    header nav .inscription-nav a:hover, .connexion-nav a:hover, .deconnexion-nav a:hover{
+
+    header nav .inscription-nav a:hover, .connexion-nav a:hover, .deconnexion-nav a:hover {
         color: white;
     }
 
@@ -824,14 +826,29 @@ Delete img and vh
     header nav .inscription-nav, .connexion-nav, .deconnexion-nav {
         background-color: #1d2833;
     }
-    header nav .inscription-nav, .connexion-nav, .deconnexion-nav{
-        padding: 0;
-        margin: 0;
-    }
-    header nav .inscription-nav a, .connexion-nav a, .deconnexion-nav a{
+
+    header nav .inscription-nav, .connexion-nav, .deconnexion-nav {
         padding: 0;
         margin: 0;
     }
 
+    header nav .inscription-nav a, .connexion-nav a, .deconnexion-nav a {
+        padding: 0;
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #projets-section .row {
+        flex-direction: column;
+    }
+
+    #projets-section .row .column {
+        width: 0;
+        margin: 0 auto;
+
+    }
 }
 
