@@ -1,6 +1,9 @@
 <?php
 session_start();
 spl_autoload_register();
+if (!isAdmin()){
+    header("Location: 404.html");
+}
 include('inc/function.php');
 use Inc\Service\Bdd;
 $select = new Bdd();
