@@ -20,6 +20,11 @@ if (!empty($_POST['envoyer'])) {
     $password      = trim(strip_tags($_POST['password']));
     $password2     = trim(strip_tags($_POST['password2']));
     $email         = trim(strip_tags($_POST['mail']));
+    if (isset($_POST['cgu'])) {
+      $cgu   = trim(strip_tags($_POST['cgu']));
+    } else {
+      $cgu = false;
+    }
 
     // Validation
     $v = new Validation();
@@ -31,6 +36,7 @@ if (!empty($_POST['envoyer'])) {
     $v->validChamp($errors, $adresse, 'adresse', 2, 900);
     $v->validChamp($errors, $telephone, 'telephone', 10, 10);
     $v->validChamp($errors, $siret, 'siret', 14, 24);
+    $v->ValidCgu  ($errors, $cgu);
 
 
     if (count($errors) == 0) {
@@ -41,12 +47,6 @@ if (!empty($_POST['envoyer'])) {
         $success = true;
         header('Location: connexion.php');
     }
-}
-
-if(!empty($_POST['cgu']) && $_POST['cgu']) {
-
-} else {
-    $errors['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
 }
 
 $form = new Form($errors);
