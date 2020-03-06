@@ -433,6 +433,11 @@ footer .footer-icons #twitter:hover {
 ////////////////////////*/
 
 
+
+
+#wrapper {
+    padding-top: 60px;
+}
 table {
     width: 80%;
     text-align: center;
