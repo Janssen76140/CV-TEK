@@ -1,9 +1,9 @@
-<?php 
+<?php
 namespace Inc\Service;
 use Inc\LocalPdo;
 use Inc\Repository\ArticleRepository;
 
-class Validation 
+class Validation
 {
     public function validChamp(&$errors, $value, $key, $min, $max, $empty = false)
     {
@@ -21,7 +21,7 @@ class Validation
         return $errors;
     }
 
-    public function ValidMail(&$errors, $mail) 
+    public function ValidMail(&$errors, $mail)
     {
 
         if (empty($mail) || filter_var($mail, FILTER_VALIDATE_EMAIL) == false) {
@@ -53,15 +53,24 @@ class Validation
         }
     }
 
+    public function ValidCgu(&$errors, $cgu)
+    {
+        if(!empty($_POST['cgu']) && $_POST['cgu']) {
+
+        } else {
+            $errors['cgu'] = 'Veuillez accepter les Conditions générales d’utilisation.';
+        }
+    }
+
     public function ValidLogin(&$errors, $mail, $password)
     {
         if (empty($mail) || empty($password)) {
             $errors['mail'] = 'Veuillez renseigner ce champ';
         } else {
             $repository = new ArticleRepository();
-            
+
             $user = $repository->findByEmail($mail);
-            
+
             if (!empty($user)) {
 
                 if (password_verify($password, $user->getPassword())) {
@@ -70,21 +79,21 @@ class Validation
                         'mail'   => $user->getMail(),
                         'ip'     => $_SERVER['REMOTE_ADDR']
                     );
-    
+
                     // Debug *_SESSION
 
                 } else {
                     $errors['mail'] = 'Pseudo ou email inconnu ou mot de passe oublié';
                 }
-    
-    
-    
-    
-    
+
+
+
+
+
             } else {
                 $errors['mail'] = 'Pseudo ou email inconnu';
             }
         }
-    
+
     }
 }

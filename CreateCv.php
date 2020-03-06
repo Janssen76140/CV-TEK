@@ -84,30 +84,31 @@ include('inc/header.php'); ?>
 
 
             <h3>Expériences</h3>
+            <div id="test">
+                <?= $form->label('datedebut_mois', 'Mois'); ?>
+                <?= $form->optionMonth('datedebut_mois'); ?>
+                <?= $form->label('datedebut_annee', 'Année'); ?>
+                <?= $form->optionYear('datedebut_annee', '2020'); ?>
+                <?= $form->label('datefin_mois', 'Mois'); ?>
+                <?= $form->optionMonth('datefin_mois'); ?>
+                <?= $form->label('datefin_annee', 'Année'); ?>
+                <?= $form->optionYear('datefin_annee', '2020'); ?>
+                <?= $form->errors('datedebut'); ?>
 
-            <?= $form->label('datedebut_mois', 'Mois'); ?>
-            <?= $form->optionMonth('datedebut_mois'); ?>
-            <?= $form->label('datedebut_annee', 'Année'); ?>
-            <?= $form->optionYear('datedebut_annee', '2020'); ?>
-            <?= $form->label('datefin_mois', 'Mois'); ?>
-            <?= $form->optionMonth('datefin_mois'); ?>
-            <?= $form->label('datefin_annee', 'Année'); ?>
-            <?= $form->optionYear('datefin_annee', '2020'); ?>
-            <?= $form->errors('datedebut'); ?>
+                <?= $form->label('intitule_poste', 'Intitulé du poste'); ?>
+                <?= $form->input('intitule_poste', 'text'); ?>
+                <?= $form->errors('intitule_poste'); ?>
 
-            <?= $form->label('intitule_poste', 'Intitulé du poste'); ?>
-            <?= $form->input('intitule_poste', 'text'); ?>
-            <?= $form->errors('intitule_poste'); ?>
+                <?= $form->label('nom_entreprise', 'Nom de l\'entreprise'); ?>
+                <?= $form->input('nom_entreprise', 'text'); ?>
+                <?= $form->errors('nom_entreprise'); ?>
 
-            <?= $form->label('nom_entreprise', 'Nom de l\'entreprise'); ?>
-            <?= $form->input('nom_entreprise', 'text'); ?>
-            <?= $form->errors('nom_entreprise'); ?>
-
-            <?= $form->label('description_experience', 'Description de votre éxperience'); ?>
-            <?= $form->textarea('description_experience'); ?>
-            <?= $form->errors('description_experience'); ?>
+                <?= $form->label('description_experience', 'Description de votre éxperience'); ?>
+                <?= $form->textarea('description_experience'); ?>
+                <?= $form->errors('description_experience'); ?>
+            </div>
         </div>
-
+        <div id="plus">+</div>
         <div class="cvform2">
             <h3>Formations</h3>
 
