@@ -59,6 +59,8 @@ if(isset($_POST['submit'])){
         // Upload file
         move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$fileName);
 
+    } else {
+        echo "Extension de fichier incorrect";
     }
 
 }
