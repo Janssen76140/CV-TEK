@@ -28,7 +28,7 @@ if (!empty($_POST['envoyer'])) {
         $_SESSION['role'] = $user->getRole();
         $_SESSION['id'] = $user->getId();
         $success = true;
-        header('Location: index.php');
+        header('Location: compte.php');
     }
 }
 
