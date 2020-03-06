@@ -45,5 +45,11 @@ function afficher(){
     var saisie =document.getElementById("titre_cv").value;
     var res = document.getElementById("titre_cv1");
     res.innerHTML = saisie;
-    }
+}
+
+function plus(){
+    var saisie =document.getElementById("test").value;
+    var res = document.getElementById("plus");
+    res.innerHTML = saisie;
+}
 
