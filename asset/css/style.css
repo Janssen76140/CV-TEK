@@ -792,10 +792,70 @@ padding-top: 20px;
     margin-left: 8.1%;
 }
 
+.gauche {
+    width: 100%;
+    float: left;
+    background-color: #1d2833;
+}
 
-/************
-MEDIA QUERIES
-************/
+.visuel_cv {
+    display: flex;
+    width: 49.9999999%;
+    display: inline-block;
+    padding-top: 60px;
+}
+
+.visuel_cv .visuel_cv_a4 {
+    position: absolute;
+    height: 842px;
+    width: 596px;
+    margin-left: 4.5%;
+    background-color: white;
+}
+
+.visuel_cv .visuel_cv_a4 .background_titre 
+{
+    position: relative;
+    height: 11.82%;
+    width: 83.89%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    background-color: #222222;
+}
+
+.visuel_cv .visuel_cv_a4 .background_titre .nom_visuel 
+{
+    display: inline-block;
+    font-size: 1.4em;
+    color: white;
+    margin-left: 2%;
+}
+
+.infoNom {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.visuel_cv #titre_cv1{
+font-size: 0.8em;
+color:white;
+text-align: center;
+padding-top: 20px;
+}
+
+.visuel_cv .visuel_cv_a4 .barre_lateral_gauche
+{
+    height: 80%;
+    width: 40%;
+    background-color: #CCCCCC;
+    margin-left: 8.1%;
+}
+
+.visuel_cv .visuel_cv_a4 .barre_lateral_gauche h3 {
+    margin: 10px 0 0 50px;
+}
+
 
 
 /*
@@ -855,6 +915,10 @@ Delete img and vh
 }
 
 @media screen and (max-width: 740px) {
+
+    header nav h1 a {
+        display: none;
+    }
 
     header nav h1 a {
         display: none;
