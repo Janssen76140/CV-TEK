@@ -54,5 +54,12 @@ function afficher(){
     var saisie =document.getElementById("titre_cv").value;
     var res = document.getElementById("titre_cv1");
     res.innerHTML = saisie;
-    }
+}
+
+function afficher2(){
+    var take =document.getElementById("competences").value;
+    var ress = document.getElementById("competences_1");
+    ress.innerHTML = take;
+}
+
 

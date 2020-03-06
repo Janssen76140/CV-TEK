@@ -2,7 +2,7 @@
 session_start();
 spl_autoload_register();
 include('inc/function.php');
-if (!isLogged()){
+if (!isLogged()) {
     header("Location: 404.html");
 }
 
@@ -148,6 +148,8 @@ include('inc/header.php'); ?>
 
             <?= $form->label('competences', 'Vos compétences'); ?>
             <?= $form->input('competences', 'text'); ?>
+            <div onclick="afficher2()">
+            <?= $form->inputAfficher('button', 'button', 'Afficher'); ?></div>
             <?= $form->errors('competences'); ?>
         </div>
 
@@ -157,26 +159,31 @@ include('inc/header.php'); ?>
 
 <div class="visuel_cv">
     <div class="visuel_cv_a4">
-            <?php if ($userId !== false) {
-                $info = $repo->selectInfo($userId);
-                $html = '<div class="background_titre">';
-                    $html .= '<div class="infoNom">';
-                        $html .= '<p class="nom_visuel">' . $info['nom'] . '</p>';
-                        $html .= '<p class="nom_visuel">' . $info['prenom'] . '</p>';
-                        $html .= '<p id="titre_cv1"></p>';
-                    $html .= '</div>';
-                $html .= '</div>';
-                $html .= '<div class="barre_lateral_gauche">';
-                    $html .= '<h3>Contact</h3>'; 
-                    $html .= '<p class="contact_adresse">' . $info['adresse'] . '</p>';
-                    $html .= '<p class="contact_telephone">' . $info['telephone'] . '</p>';
-                    $html .= '<p class="contact_email">' . $info['email'] . '</p>';
+        <?php if ($userId !== false) {
+            $info = $repo->selectInfo($userId);
+            $html = '<div class="background_titre">';
+            $html .= '<div class="infoNom">';
+            $html .= '<p class="nom_visuel">' . $info['nom'] . '</p>';
+            $html .= '<p class="nom_visuel">' . $info['prenom'] . '</p>';
+            $html .= '<p id="titre_cv1"></p>';
+            $html .= '</div>';
+            $html .= '</div>';
+            $html .= '<div class="barre_lateral_gauche">';
+            $html .= '<h3>Contact</h3>';
+            $html .= '<p class="contact_adresse">' . $info['adresse'] . '</p>';
+            $html .= '<p class="contact_telephone">' . $info['telephone'] . '</p>';
+            $html .= '<p class="contact_email">' . $info['email'] . '</p>';
 
-                    $html .= '<h3>Compétences</h3>';
-                    $html .= '<p id="competences_1"></p>';
-                $html .= '</div>';
-                echo $html;
-            } ?>
+            $html .= '<h3>Compétences</h3>';
+            $html .= '<p id="competences_1"></p>';
+            $html .= '</div>';
+            echo $html;
+        } ?>
     </div>
 </div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="asset/fittext/jquery.fittext.js"></script>
 
+<script type="text/javascript" src="asset/js/main.js"></script>
