@@ -1,9 +1,7 @@
 <?php
 spl_autoload_register();
 include('inc/function.php');
-if (!isLogged()){
-    header("Location: 404.html");
-}
+
 use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;
 use \Inc\Service\Validation;
