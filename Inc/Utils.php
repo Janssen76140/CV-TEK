@@ -97,15 +97,7 @@ class Utils
         return false;
     }
 
-    function isAdmin()
-    {
-        if (isLogged()) {
-            if (!empty($_SESSION['login']['role'] === 'admin')) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 
     function getCurrentUserId()
     {

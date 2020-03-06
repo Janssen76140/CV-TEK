@@ -1,6 +1,9 @@
 <?php
 session_start();
 spl_autoload_register();
+if (!isAdmin()){
+    header("Location: 404.html");
+}
 
 use Inc\Service\SearchBar;
 use Inc\Utils;

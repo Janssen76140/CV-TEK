@@ -1,6 +1,9 @@
 <?php
 session_start();
 spl_autoload_register();
+if (!isLogged()){
+    header("Location: 404.html");
+}
 
 use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;

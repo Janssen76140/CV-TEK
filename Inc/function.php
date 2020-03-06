@@ -79,3 +79,11 @@ function isLogged()
         }
     return false;
 }
+function isAdmin()
+{
+    $role = array('admin');
+    if (isset($_SESSION['role']) && in_array($_SESSION['role'], $role)) {
+        return true;
+    }
+    return false;
+}

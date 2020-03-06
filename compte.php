@@ -1,8 +1,9 @@
 <?php
-session_start();
 spl_autoload_register();
 include('inc/function.php');
-
+if (!isLogged()){
+    header("Location: 404.html");
+}
 use \Inc\Repository\ArticleRepository;
 use \Inc\Service\Form;
 use \Inc\Service\Validation;
@@ -12,6 +13,8 @@ $title = "Mon compte";
 $errors = array();
 $success = false;
 $utils = new Utils;
+
+
 
 $repo = new ArticleRepository();
 $userId = $utils->getCurrentUserId();
@@ -60,7 +63,6 @@ if(isset($_POST['submit'])){
         move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$fileName);
 
     } else {
-        echo "Extension de fichier incorrect";
     }
 
 }
